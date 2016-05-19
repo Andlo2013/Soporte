@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TicketsMVCModelStoreContainer" CdmEntityContainer="TicketsMVCEntities">
+    <EntitySetMapping Name="Contratoes">
+      <EntityTypeMapping TypeName="TicketsMVCModel.Contratoes">
+        <MappingFragment StoreEntitySet="Contratoes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Empresa_id" ColumnName="Empresa_id" />
+          <ScalarProperty Name="Plan_id" ColumnName="Plan_id" />
+          <ScalarProperty Name="fecInicia" ColumnName="fecInicia" />
+          <ScalarProperty Name="fecTermina" ColumnName="fecTermina" />
+          <ScalarProperty Name="MinPlan" ColumnName="MinPlan" />
+          <ScalarProperty Name="MinUtilizado" ColumnName="MinUtilizado" />
+          <ScalarProperty Name="MinDispone" ColumnName="MinDispone" />
+          <ScalarProperty Name="obsContrato" ColumnName="obsContrato" />
+          <ScalarProperty Name="EstReg" ColumnName="EstReg" />
+          <ScalarProperty Name="e_Empresa_id" ColumnName="e_Empresa_id" />
+          <ScalarProperty Name="e_Plan_id" ColumnName="e_Plan_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="TicketsMVCModel.Empresas">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="EmpRuc" ColumnName="EmpRuc" />
+          <ScalarProperty Name="EmpNom" ColumnName="EmpNom" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="EstReg" ColumnName="EstReg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plans">
+      <EntityTypeMapping TypeName="TicketsMVCModel.Plans">
+        <MappingFragment StoreEntitySet="Plans">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Minutos" ColumnName="Minutos" />
+          <ScalarProperty Name="EstReg" ColumnName="EstReg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prioridads">
+      <EntityTypeMapping TypeName="TicketsMVCModel.Prioridads">
+        <MappingFragment StoreEntitySet="Prioridads">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstReg" ColumnName="EstReg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

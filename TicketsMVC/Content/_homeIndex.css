@@ -1,0 +1,11 @@
+﻿body {
+}
+
+#amazingslider-wrapper-1{
+    display:block;
+    position:relative;
+    max-width:900px;
+    padding-left:0px; 
+    padding-right:244px;
+    margin:2em auto 2em;
+}

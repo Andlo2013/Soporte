@@ -1,0 +1,90 @@
+﻿@model _Entidades.Contrato
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contrato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plan_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plan_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecInicia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecInicia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecTermina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecTermina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinUtilizado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinUtilizado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinDispone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinDispone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.obsContrato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.obsContrato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstReg)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

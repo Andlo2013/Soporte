@@ -1,0 +1,213 @@
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\ApplicationInsights.config
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\csc.exe
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\System.Collections.Immutable.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\System.Reflection.Metadata.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\vbc.exe
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\VBCSCompiler.exe
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\roslyn\VBCSCompiler.exe.config
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\TicketsMVC.dll.config
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\TicketsMVC.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\TicketsMVC.pdb
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Antlr3.Runtime.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\DataTickets.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\EntityFramework.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\EntityFramework.SqlServer.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.DependencyCollector.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.Web.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.WindowsServer.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.ApplicationInsights.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Newtonsoft.Json.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Owin.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Helpers.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Mvc.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Optimization.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Razor.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.WebPages.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.WebPages.Razor.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\WebGrease.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\_Entidades.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\DataTickets.pdb
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\_Entidades.pdb
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.DependencyCollector.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.Web.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AI.WindowsServer.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.ApplicationInsights.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Helpers.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Mvc.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Optimization.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.Razor.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.WebPages.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\System.Web.WebPages.Razor.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Antlr3.Runtime.pdb
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Newtonsoft.Json.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\EntityFramework.SqlServer.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\System.Web.Helpers.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\System.Web.Mvc.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\System.Web.Optimization.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\System.Web.Razor.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\System.Web.WebPages.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\EntityFramework.SqlServer.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.Owin.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.Owin.Security.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.Owin.Security.Google.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\obj\Debug\TicketsMVC.csprojResolveAssemblyReference.cache
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\obj\Debug\TicketsMVC.Migrations.create_DataBase.resources
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\obj\Debug\TicketsMVC.Migrations.create_DataBase1.resources
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\obj\Debug\TicketsMVC.csproj.GenerateResource.Cache
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\obj\Debug\TicketsMVC.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\TicketsMVC\obj\Debug\TicketsMVC.pdb
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\ApplicationInsights.config
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\csc.exe
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\System.Collections.Immutable.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\System.Reflection.Metadata.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\vbc.exe
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\VBCSCompiler.exe
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\roslyn\VBCSCompiler.exe.config
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\TicketsMVC.dll.config
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\TicketsMVC.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\TicketsMVC.pdb
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Antlr3.Runtime.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\DataTickets.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\EntityFramework.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\EntityFramework.SqlServer.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.DependencyCollector.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.Web.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.WindowsServer.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.ApplicationInsights.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Newtonsoft.Json.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Owin.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Helpers.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Mvc.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Optimization.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Razor.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.WebPages.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.WebPages.Razor.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\WebGrease.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\_Entidades.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\DataTickets.pdb
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\_Entidades.pdb
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.DependencyCollector.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.Web.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AI.WindowsServer.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.ApplicationInsights.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Helpers.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Mvc.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Optimization.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.Razor.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.WebPages.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\System.Web.WebPages.Razor.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Antlr3.Runtime.pdb
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Newtonsoft.Json.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\EntityFramework.SqlServer.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\System.Web.Helpers.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\System.Web.Mvc.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\System.Web.Optimization.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\System.Web.Razor.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\System.Web.WebPages.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\EntityFramework.SqlServer.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.Owin.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.Owin.Security.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.Owin.Security.Google.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\obj\Debug\TicketsMVC.csprojResolveAssemblyReference.cache
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\obj\Debug\TicketsMVC.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsMVC\obj\Debug\TicketsMVC.pdb

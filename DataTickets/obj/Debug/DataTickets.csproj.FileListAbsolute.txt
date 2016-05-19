@@ -1,0 +1,30 @@
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\DataTickets.dll.config
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\DataTickets.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\DataTickets.pdb
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\EntityFramework.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\EntityFramework.SqlServer.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\_Entidades.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\_Entidades.pdb
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\EntityFramework.SqlServer.xml
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\es\EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\obj\Debug\DataTickets.csprojResolveAssemblyReference.cache
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\obj\Debug\DataTickets.dll
+D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\DataTickets\obj\Debug\DataTickets.pdb
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\DataTickets.dll.config
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\DataTickets.dll
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\DataTickets.pdb
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\EntityFramework.dll
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\EntityFramework.SqlServer.dll
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\_Entidades.dll
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\_Entidades.pdb
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\EntityFramework.SqlServer.xml
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\es\EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.csprojResolveAssemblyReference.cache
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.dll
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.pdb
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.Migrations.creaDataBase.resources
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.csproj.GenerateResource.Cache

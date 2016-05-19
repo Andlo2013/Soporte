@@ -1,0 +1,61 @@
+﻿@model IEnumerable<_Entidades.Empresa>
+
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Empresas</h2>
+
+<p>
+    @Html.ActionLink("Nueva Empresa", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            RUC       
+        </th>
+        <th>
+            Empresa
+        </th>
+        <th>
+            Dirección
+        </th>
+        <th>
+            Teléfono
+        </th>
+        <th>
+            Activo
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpRuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpNom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstReg)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

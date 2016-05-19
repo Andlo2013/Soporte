@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_Entidades.Contrato>
+
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Contratos</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Contrato", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Empresa
+        </th>
+        <th>
+            Plan
+        </th>
+        <th>
+            Fec. Termina
+        </th>
+        <th>
+            Minutos
+        </th>
+        <th>
+            Utilizado
+        </th>
+        <th>
+            ACT
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa.EmpNom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plan.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecTermina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinPlan)
+        </td>
+        <td>
+            
+            @Html.DisplayFor(modelItem => item.MinUtilizado)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.EstReg)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

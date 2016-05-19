@@ -1,0 +1,67 @@
+﻿@model IEnumerable<_Entidades.Contrato>
+
+@{
+    ViewBag.Title = "Contratos";
+}
+
+<h2>Contratos</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Contrato", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empresa.EmpNom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plan.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecTermina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinPlan)
+        </th>
+        <th>
+            Min utilizados
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstReg)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa.EmpNom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plan.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecTermina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinPlan)
+        </td>
+        <td>
+            0
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstReg)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

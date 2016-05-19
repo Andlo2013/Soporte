@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TicketsMVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Contratoes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empresa_id" Type="Int32" Nullable="false" />
+    <Property Name="Plan_id" Type="Int32" Nullable="false" />
+    <Property Name="fecInicia" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fecTermina" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MinPlan" Type="Int32" Nullable="false" />
+    <Property Name="MinUtilizado" Type="Int32" Nullable="false" />
+    <Property Name="MinDispone" Type="Int32" Nullable="false" />
+    <Property Name="obsContrato" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EstReg" Type="Boolean" Nullable="false" />
+    <Property Name="e_Empresa_id" Type="Int32" />
+    <Property Name="e_Plan_id" Type="Int32" />
+    <NavigationProperty Name="Empresas" Relationship="Self.FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id" FromRole="Contratoes" ToRole="Empresas" />
+    <NavigationProperty Name="Plans" Relationship="Self.FK_dbo_Contratoes_dbo_Plans_e_Plan_id" FromRole="Contratoes" ToRole="Plans" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpRuc" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmpNom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EstReg" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Contratoes" Relationship="Self.FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id" FromRole="Empresas" ToRole="Contratoes" />
+  </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Minutos" Type="Int32" Nullable="false" />
+    <Property Name="EstReg" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Contratoes" Relationship="Self.FK_dbo_Contratoes_dbo_Plans_e_Plan_id" FromRole="Plans" ToRole="Contratoes" />
+  </EntityType>
+  <EntityType Name="Prioridads">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EstReg" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id">
+    <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
+    <End Role="Contratoes" Type="Self.Contratoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Contratoes">
+        <PropertyRef Name="e_Empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Contratoes_dbo_Plans_e_Plan_id">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="0..1" />
+    <End Role="Contratoes" Type="Self.Contratoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Contratoes">
+        <PropertyRef Name="e_Plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TicketsMVCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contratoes" EntityType="Self.Contratoes" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresas" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" />
+    <EntitySet Name="Prioridads" EntityType="Self.Prioridads" />
+    <AssociationSet Name="FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id" Association="Self.FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Contratoes" EntitySet="Contratoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Contratoes_dbo_Plans_e_Plan_id" Association="Self.FK_dbo_Contratoes_dbo_Plans_e_Plan_id">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="Contratoes" EntitySet="Contratoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

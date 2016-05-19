@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TicketsMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Contratoes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empresa_id" Type="int" Nullable="false" />
+    <Property Name="Plan_id" Type="int" Nullable="false" />
+    <Property Name="fecInicia" Type="datetime" Nullable="false" />
+    <Property Name="fecTermina" Type="datetime" Nullable="false" />
+    <Property Name="MinPlan" Type="int" Nullable="false" />
+    <Property Name="MinUtilizado" Type="int" Nullable="false" />
+    <Property Name="MinDispone" Type="int" Nullable="false" />
+    <Property Name="obsContrato" Type="nvarchar" MaxLength="500" />
+    <Property Name="EstReg" Type="bit" Nullable="false" />
+    <Property Name="e_Empresa_id" Type="int" />
+    <Property Name="e_Plan_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpRuc" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="EmpNom" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstReg" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Minutos" Type="int" Nullable="false" />
+    <Property Name="EstReg" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prioridads">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstReg" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id">
+    <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
+    <End Role="Contratoes" Type="Self.Contratoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Contratoes">
+        <PropertyRef Name="e_Empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Contratoes_dbo_Plans_e_Plan_id">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="0..1" />
+    <End Role="Contratoes" Type="Self.Contratoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Contratoes">
+        <PropertyRef Name="e_Plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TicketsMVCModelStoreContainer">
+    <EntitySet Name="Contratoes" EntityType="Self.Contratoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prioridads" EntityType="Self.Prioridads" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id" Association="Self.FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Contratoes" EntitySet="Contratoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Contratoes_dbo_Plans_e_Plan_id" Association="Self.FK_dbo_Contratoes_dbo_Plans_e_Plan_id">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="Contratoes" EntitySet="Contratoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
