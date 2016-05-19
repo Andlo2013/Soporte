@@ -49,6 +49,7 @@ namespace TicketsMVC.Models
 
     public class LoginViewModel
     {
+       
         [Required]
         [Display(Name = "Correo electrónico")]
         [EmailAddress]
@@ -61,16 +62,14 @@ namespace TicketsMVC.Models
 
         [Display(Name = "¿Recordar cuenta?")]
         public bool RememberMe { get; set; }
+
+        
     }
 
     public class RegisterViewModel
     {
 
         public int EmpresaID { get; set; }
-
-        [Required]
-        [Display(Name = "Usuario")]
-        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]

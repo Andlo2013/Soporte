@@ -139,6 +139,7 @@ namespace TicketsMVC.Controllers
 
         //
         // GET: /Account/Register
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -148,6 +149,7 @@ namespace TicketsMVC.Controllers
         // POST: /Account/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<ActionResult> Register(RegisterViewModel model,string RUC)
         {
             _clsCommonQuery objComun = new _clsCommonQuery();
@@ -155,7 +157,7 @@ namespace TicketsMVC.Controllers
             if (ModelState.IsValid && infoEmpresa!=null)
             {
                 model.EmpresaID = infoEmpresa.id;
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,EmpresaID=model.EmpresaID };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,EmpresaID=model.EmpresaID };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {                    
@@ -393,6 +395,7 @@ namespace TicketsMVC.Controllers
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
