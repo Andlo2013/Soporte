@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using DataTickets;
 using _Entidades;
 
-namespace TicketsMVC.Areas.supportSI.Controllers
+namespace TicketsMVC.Areas.supportSI.Models
 {
     public class _clsCommonQuery
     {

@@ -69,6 +69,10 @@ namespace TicketsMVC.Models
         public int EmpresaID { get; set; }
 
         [Required]
+        [Display(Name = "Usuario")]
+        public string UserName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
         public string Email { get; set; }

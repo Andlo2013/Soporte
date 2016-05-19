@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DataTickets;
 using _Entidades;
-using TicketsMVC.Areas.supportSI.Controllers;
+using TicketsMVC.Areas.supportSI.Models;
 
 namespace TicketsMVC.Controllers
 {

@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TicketsMVC.Models;
+using _Entidades;
+using TicketsMVC.Areas.supportSI.Models;
 
 namespace TicketsMVC.Controllers
 {
@@ -146,14 +148,17 @@ namespace TicketsMVC.Controllers
         // POST: /Account/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model,string RUC)
         {
-            if (ModelState.IsValid)
+            _clsCommonQuery objComun = new _clsCommonQuery();
+            Empresa infoEmpresa = objComun._BuscaEmpresaRUC(RUC);
+            if (ModelState.IsValid && infoEmpresa!=null)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,EmpresaID=model.EmpresaID };
+                model.EmpresaID = infoEmpresa.id;
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,EmpresaID=model.EmpresaID };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
-                {
+                {                    
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // Para obtener más información sobre cómo habilitar la confirmación de cuenta y el restablecimiento de contraseña, visite http://go.microsoft.com/fwlink/?LinkID=320771

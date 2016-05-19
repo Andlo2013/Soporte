@@ -208,7 +208,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\supportSI\Controllers\si_PlanController.cs" />
-    <Compile Include="Areas\supportSI\Controllers\_clsCommonQuery.cs" />
+    <Compile Include="Areas\supportSI\Models\_clsCommonQuery.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -319,7 +319,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Cliente\Controllers\" />
     <Folder Include="Areas\Cliente\Models\" />
-    <Folder Include="Areas\supportSI\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
