@@ -90,7 +90,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountViewModels.cs" />
     <Compile Include="Combo.cs" />
+    <Compile Include="IdentityModels.cs" />
+    <Compile Include="ManageViewModels.cs" />
     <Compile Include="TicketsCategoria.cs" />
     <Compile Include="Contrato.cs" />
     <Compile Include="Empresa.cs" />

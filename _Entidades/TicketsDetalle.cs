@@ -11,6 +11,10 @@ namespace _Entidades
     {
         public int id { get; set; }
 
+        [Display(Name = "Num")]
+        [Required(ErrorMessage = "El campo Sec. Respuesta es obligatorio")]
+        public int SecRespta { get; set; }
+
         [Display(Name = "Ticket")]
         [Required(ErrorMessage = "El campo ticket es obligatorio")]
         public int TicketId { get; set; }
@@ -27,10 +31,6 @@ namespace _Entidades
         [Display(Name = "Minutos")]
         [Required(ErrorMessage = "Ingrese el tiempo invertido")]
         public int Minutos { get; set; }
-
-        [Display(Name = "tienePlan")]
-        [Required(ErrorMessage = "El campo tiene Plan es obligatorio")]
-        public bool tienePlan { get; set; }
 
 
         [Display(Name = "Mensaje")]

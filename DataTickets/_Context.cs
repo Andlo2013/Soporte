@@ -6,6 +6,8 @@
     using _Entidades;
     using System.Data.Entity.Infrastructure.Annotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity;
     public class _Context : DbContext
     {
         // El contexto se ha configurado para usar una cadena de conexión 'TicketContext' del archivo 
@@ -32,6 +34,8 @@
         public  DbSet<Ticket> Ticket { get; set; }
         public DbSet<TicketsDetalle> TicketDetalle { get; set; }
         public DbSet<TicketsCategoria> TicketCategoria { get; set; }
+
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -148,6 +152,7 @@
                 .Property(x => x.AspNetUsersId)
                     .HasMaxLength(100)
                     .IsRequired();
+
             modelo.Entity<Ticket>()
                 .Property(x => x.fechaINI)
                     .IsRequired();
@@ -155,13 +160,13 @@
                 .Property(x => x.TecnicoId)
                     .IsRequired();
             modelo.Entity<Ticket>()
-                .Property(x => x.PrioridadId)
+                .Property(x => x.cmbPrioridadId)
                     .IsRequired();
             modelo.Entity<Ticket>()
                 .Property(x => x.TicketCategoriaId)
                     .IsRequired();
             modelo.Entity<Ticket>()
-                .Property(x => x.TicketEstadoId)
+                .Property(x => x.cmbEstadoId)
                     .IsRequired();
             modelo.Entity<Ticket>()
                 .Property(x => x.EstReg)
@@ -186,6 +191,9 @@
                 .Property(x => x.TicketId)
                     .IsRequired();
             modelo.Entity<TicketsDetalle>()
+                .Property(x => x.SecRespta)
+                    .IsRequired();
+            modelo.Entity<TicketsDetalle>()
                 .Property(x => x.AspNetUsersId)
                     .HasMaxLength(100)
                     .IsRequired();
@@ -204,18 +212,6 @@
                 .Property(x => x.observacion)
                     .IsRequired()
                     .HasMaxLength(2000);
-            modelo.Entity<TicketsDetalle>()
-                .Property(x => x.File1)
-                    .IsRequired()
-                    .HasMaxLength(250);
-            modelo.Entity<TicketsDetalle>()
-                .Property(x => x.File2)
-                    .IsRequired()
-                    .HasMaxLength(250);
-            modelo.Entity<TicketsDetalle>()
-                .Property(x => x.File3)
-                    .IsRequired()
-                    .HasMaxLength(250);
             modelo.Entity<TicketsDetalle>()
                 .Property(x => x.EstReg)
                     .IsRequired();

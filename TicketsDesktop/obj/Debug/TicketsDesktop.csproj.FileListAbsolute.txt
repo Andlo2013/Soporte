@@ -36,3 +36,10 @@ D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\obj\Debug\TicketsDesktop.Proper
 D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\obj\Debug\TicketsDesktop.csproj.GenerateResource.Cache
 D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\obj\Debug\TicketsDesktop.exe
 D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\obj\Debug\TicketsDesktop.pdb
+D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\bin\Debug\System.Web.Mvc.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\bin\Debug\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\TicketsDesktop\bin\Debug\es\Microsoft.AspNet.Identity.Core.resources.dll

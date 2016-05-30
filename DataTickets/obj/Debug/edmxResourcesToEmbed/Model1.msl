@@ -1,51 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="TicketsMVCModelStoreContainer" CdmEntityContainer="TicketsMVCEntities">
-    <EntitySetMapping Name="Contratoes">
-      <EntityTypeMapping TypeName="TicketsMVCModel.Contratoes">
-        <MappingFragment StoreEntitySet="Contratoes">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Empresa_id" ColumnName="Empresa_id" />
-          <ScalarProperty Name="Plan_id" ColumnName="Plan_id" />
-          <ScalarProperty Name="fecInicia" ColumnName="fecInicia" />
-          <ScalarProperty Name="fecTermina" ColumnName="fecTermina" />
-          <ScalarProperty Name="MinPlan" ColumnName="MinPlan" />
-          <ScalarProperty Name="MinUtilizado" ColumnName="MinUtilizado" />
-          <ScalarProperty Name="MinDispone" ColumnName="MinDispone" />
-          <ScalarProperty Name="obsContrato" ColumnName="obsContrato" />
-          <ScalarProperty Name="EstReg" ColumnName="EstReg" />
-          <ScalarProperty Name="e_Empresa_id" ColumnName="e_Empresa_id" />
-          <ScalarProperty Name="e_Plan_id" ColumnName="e_Plan_id" />
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="TicketsMVCModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpresaID" ColumnName="EmpresaID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Empresas">
-      <EntityTypeMapping TypeName="TicketsMVCModel.Empresas">
-        <MappingFragment StoreEntitySet="Empresas">
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="TicketsMVCModel.Tickets">
+        <MappingFragment StoreEntitySet="Tickets">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="EmpRuc" ColumnName="EmpRuc" />
-          <ScalarProperty Name="EmpNom" ColumnName="EmpNom" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="EstReg" ColumnName="EstReg" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Plans">
-      <EntityTypeMapping TypeName="TicketsMVCModel.Plans">
-        <MappingFragment StoreEntitySet="Plans">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Minutos" ColumnName="Minutos" />
-          <ScalarProperty Name="EstReg" ColumnName="EstReg" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Prioridads">
-      <EntityTypeMapping TypeName="TicketsMVCModel.Prioridads">
-        <MappingFragment StoreEntitySet="Prioridads">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="ContratoId" ColumnName="ContratoId" />
+          <ScalarProperty Name="AspNetUsersId" ColumnName="AspNetUsersId" />
+          <ScalarProperty Name="fechaINI" ColumnName="fechaINI" />
+          <ScalarProperty Name="TecnicoId" ColumnName="TecnicoId" />
+          <ScalarProperty Name="fechaFIN" ColumnName="fechaFIN" />
+          <ScalarProperty Name="PrioridadId" ColumnName="PrioridadId" />
+          <ScalarProperty Name="TicketEstadoId" ColumnName="TicketEstadoId" />
+          <ScalarProperty Name="TicketCategoriaId" ColumnName="TicketCategoriaId" />
+          <ScalarProperty Name="NumDetalle" ColumnName="NumDetalle" />
           <ScalarProperty Name="EstReg" ColumnName="EstReg" />
         </MappingFragment>
       </EntityTypeMapping>

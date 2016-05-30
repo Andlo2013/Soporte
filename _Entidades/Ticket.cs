@@ -21,9 +21,9 @@ namespace _Entidades
         [Required(ErrorMessage = "El tipo de contrato es obligatorio")]
         public int ContratoId { get; set; }
 
-        [Display(Name = "User")]
-        [Required(ErrorMessage = "El código de usuario es obligatorio")]
+       [Required(ErrorMessage ="Usuario es obligatorio")]
         public string AspNetUsersId { get; set; }
+
 
         [Display(Name = "FechaINI")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
@@ -40,11 +40,11 @@ namespace _Entidades
 
         [Display(Name = "Prioridad")]
         [Required(ErrorMessage = "El campo PRIORIDAD es obligatorio")]
-        public int PrioridadId { get; set; }
+        public int cmbPrioridadId { get; set; }
 
         [Display(Name = "Estado")]
         [Required(ErrorMessage = "El campo Estado de ticket es obligatorio")]
-        public int TicketEstadoId { get; set; }
+        public int cmbEstadoId { get; set; }
 
         [Display(Name = "Categoría")]
         [Required(ErrorMessage = "La categoría de ticket es obligatoria")]
@@ -53,6 +53,11 @@ namespace _Entidades
         [Display(Name ="Nro. Respuestas")]
         [Required(ErrorMessage ="El número de detalles es obligatorio")]
         public int NumDetalle { get; set; }
+
+        [Display(Name ="Identificador")]
+        [Required(ErrorMessage ="El campo identificador es obligatorio")]
+        [StringLength(150,ErrorMessage ="El identificador debe tener máximo 150 caracteres")]
+        public string UUID { get; set; }
 
         [Display(Name = "Activo")]
         [Required(ErrorMessage = "El estado del registro es obligatoria")]

@@ -17,6 +17,10 @@ namespace _Entidades
         [StringLength(50, ErrorMessage = "Descripción Categoría debe tener máximo 50 caracteres")]
         public string Categoria { get; set; }
 
+        [Display(Name = "Descarga")]
+        [Required(ErrorMessage = "Descarga tiempo es un campo obligatorio")]
+        public bool  isDescarga{ get; set; }
+
         [Display(Name = "Activo")]
         [Required(ErrorMessage = "Estado Categoría es un campo obligatorio")]
         public bool EstReg { get; set; }

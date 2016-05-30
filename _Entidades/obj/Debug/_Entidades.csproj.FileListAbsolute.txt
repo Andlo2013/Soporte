@@ -34,4 +34,3 @@ D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Newtonsoft.Json.xml
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\Microsoft.AspNet.Identity.Core.resources.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\Microsoft.AspNet.Identity.Owin.resources.dll
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\obj\Debug\_Entidades.csprojResolveAssemblyReference.cache

@@ -1,86 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TicketsMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Contratoes">
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EmpresaID" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tickets">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Empresa_id" Type="int" Nullable="false" />
-    <Property Name="Plan_id" Type="int" Nullable="false" />
-    <Property Name="fecInicia" Type="datetime" Nullable="false" />
-    <Property Name="fecTermina" Type="datetime" Nullable="false" />
-    <Property Name="MinPlan" Type="int" Nullable="false" />
-    <Property Name="MinUtilizado" Type="int" Nullable="false" />
-    <Property Name="MinDispone" Type="int" Nullable="false" />
-    <Property Name="obsContrato" Type="nvarchar" MaxLength="500" />
-    <Property Name="EstReg" Type="bit" Nullable="false" />
-    <Property Name="e_Empresa_id" Type="int" />
-    <Property Name="e_Plan_id" Type="int" />
-  </EntityType>
-  <EntityType Name="Empresas">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="EmpRuc" Type="nvarchar" MaxLength="13" Nullable="false" />
-    <Property Name="EmpNom" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
-    <Property Name="Telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="ContratoId" Type="int" Nullable="false" />
+    <Property Name="AspNetUsersId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="fechaINI" Type="datetime" Nullable="false" />
+    <Property Name="TecnicoId" Type="int" Nullable="false" />
+    <Property Name="fechaFIN" Type="datetime" Nullable="false" />
+    <Property Name="PrioridadId" Type="int" Nullable="false" />
+    <Property Name="TicketEstadoId" Type="int" Nullable="false" />
+    <Property Name="TicketCategoriaId" Type="int" Nullable="false" />
+    <Property Name="NumDetalle" Type="int" Nullable="false" />
     <Property Name="EstReg" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="Plans">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Minutos" Type="int" Nullable="false" />
-    <Property Name="EstReg" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Prioridads">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="EstReg" Type="bit" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id">
-    <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
-    <End Role="Contratoes" Type="Self.Contratoes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empresas">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Contratoes">
-        <PropertyRef Name="e_Empresa_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_dbo_Contratoes_dbo_Plans_e_Plan_id">
-    <End Role="Plans" Type="Self.Plans" Multiplicity="0..1" />
-    <End Role="Contratoes" Type="Self.Contratoes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Plans">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Contratoes">
-        <PropertyRef Name="e_Plan_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="TicketsMVCModelStoreContainer">
-    <EntitySet Name="Contratoes" EntityType="Self.Contratoes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Prioridads" EntityType="Self.Prioridads" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id" Association="Self.FK_dbo_Contratoes_dbo_Empresas_e_Empresa_id">
-      <End Role="Empresas" EntitySet="Empresas" />
-      <End Role="Contratoes" EntitySet="Contratoes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_dbo_Contratoes_dbo_Plans_e_Plan_id" Association="Self.FK_dbo_Contratoes_dbo_Plans_e_Plan_id">
-      <End Role="Plans" EntitySet="Plans" />
-      <End Role="Contratoes" EntitySet="Contratoes" />
-    </AssociationSet>
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>
