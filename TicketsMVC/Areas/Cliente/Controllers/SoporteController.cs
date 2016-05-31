@@ -8,12 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using DataTickets;
 using _Entidades;
-using TicketsMVC.Areas.Cliente.Models;
 using System.Data.SqlClient;
 using System.Data.Entity.Infrastructure;
 using TicketsMVC.Clases;
 using TicketsMVC.SentenciasSQL;
 using System.Web.Routing;
+using TicketsMVC.Areas._CommonModel;
 
 namespace TicketsMVC.Areas.Cliente.Controllers
 {
@@ -91,7 +91,7 @@ namespace TicketsMVC.Areas.Cliente.Controllers
                 //jtStartIndex
                 SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@userName", "@startIndex","@perPage" },
                                                                     new object[] { User.Identity.Name, jtStartIndex, jtPageSize });
-                DbRawSqlQuery<cliTicketsModel> data = db.Database.SqlQuery<cliTicketsModel>
+                DbRawSqlQuery<TicketsModel> data = db.Database.SqlQuery<TicketsModel>
                                                             (_SQLCliente.RecuperaTickets, parametros);
                 return Json(new { Result = "OK", Records = data.ToList() }, JsonRequestBehavior.AllowGet);
             }
@@ -121,13 +121,16 @@ namespace TicketsMVC.Areas.Cliente.Controllers
             try
             {
                 m_errors = "";
+                string s_File1 = File1 != null && File1.FileName.Trim() != "" ? File1.FileName : "";
+                string s_File2 = File2 != null && File2.FileName.Trim() != "" ? File2.FileName : "";
+                string s_File3 = File3 != null && File3.FileName.Trim() != "" ? File3.FileName : "";
                 if (_Validar(teamViewer, Mensaje))
                 {
                     SqlParameter[] parametros = clsUtilidades._ParamsSQL(
-                        new string[] {"@userName","@TicketUUID","@TeamViewer","@Mensaje","@Observaciones",
-                                    "@Archivo1","@Archivo2","@Archivo3" },
-                        new object[] {User.Identity.Name,id,teamViewer,Mensaje,
-                                observacion,File1.FileName,File2.FileName,File3.FileName});
+                        new string[] {"@userName","@TicketUUID","@TeamViewer","@Minutos","@Mensaje",
+                                    "@Observaciones","@Archivo1","@Archivo2","@Archivo3" },
+                        new object[] {User.Identity.Name,id,teamViewer,0,Mensaje,
+                                observacion,s_File1,s_File2,s_File3});
                     db.Database.ExecuteSqlCommand(_SQLCliente.GuardaAnswer, parametros);
                     return RedirectToAction("Index");
                 }
@@ -147,7 +150,7 @@ namespace TicketsMVC.Areas.Cliente.Controllers
             {
                 SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@UUID" },
                                                                     new object[] { id });
-                DbRawSqlQuery<cliTicketsDETModel> data = db.Database.SqlQuery<cliTicketsDETModel>
+                DbRawSqlQuery<TicketsDETModel> data = db.Database.SqlQuery<TicketsDETModel>
                                                             (_SQLCliente.RecuperaTicketsDET, parametros);
                 return Json(new { Result = "OK", Records = data.ToList() }, JsonRequestBehavior.AllowGet);
             }
@@ -160,10 +163,6 @@ namespace TicketsMVC.Areas.Cliente.Controllers
         // GET => Detalle respuesta
         public ActionResult AnswerShow(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             TicketsDetalle ticketsDetalle = db.TicketDetalle.Find(id);
             if (ticketsDetalle == null)
             {

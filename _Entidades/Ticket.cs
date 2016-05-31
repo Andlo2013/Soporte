@@ -10,11 +10,7 @@ namespace _Entidades
 
         public int id { get; set; }
 
-        [Display(Name = "Código")]
-        [Required(ErrorMessage = "El código de ticket es obligatorio")]
-        [StringLength(13,ErrorMessage ="Longitud de código de ticket incorrecta")]
-        //El código de ticket se forma por fecha + secuencial de 4 dígitos yyyyMMdd-0001
-        public string Codigo { get; set; }
+        
 
 
         [Display(Name = "Contrato")]
@@ -30,7 +26,7 @@ namespace _Entidades
         [Required(ErrorMessage = "La fecha de ingreso es obligatoria")]
         public DateTime fechaINI { get; set; }
 
-        [Display(Name = "Tecnico")]
+        [Display(Name = "Técnico")]
         [Required(ErrorMessage = "El campo TÉCNICO es obligatorio")]
         public int TecnicoId { get; set; }
 

@@ -35,7 +35,7 @@ namespace _Entidades
 
         [Display(Name = "Mensaje")]
         [Required(ErrorMessage = "Debe ingresar un mensaje ")]
-        [StringLength(460, ErrorMessage = "El mensaje debe tener máximo 450 caracteres")]
+        [StringLength(160, ErrorMessage = "El mensaje debe tener máximo 15 caracteres")]
         public string Mensaje { get; set; }
 
         [Display(Name = "Observación")]

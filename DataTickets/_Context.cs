@@ -140,12 +140,6 @@
         private void _Table_Ticket(DbModelBuilder modelo)
         {
             modelo.Entity<Ticket>()
-                .Property(x => x.Codigo)
-                    .HasMaxLength(13)
-                    .IsRequired()
-                    .HasColumnAnnotation("Index",
-                    new IndexAnnotation(new IndexAttribute("UniqueCOD") { IsUnique = true }));
-            modelo.Entity<Ticket>()
                 .Property(x => x.ContratoId)
                     .IsRequired();
             modelo.Entity<Ticket>()

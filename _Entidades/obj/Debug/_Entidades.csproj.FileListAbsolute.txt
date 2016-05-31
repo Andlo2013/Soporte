@@ -2,18 +2,11 @@ D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\_Entidades\bin\Debug\_
 D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\_Entidades\bin\Debug\_Entidades.pdb
 D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\_Entidades\obj\Debug\_Entidades.dll
 D:\Andres\VisualStudio\TicketsMVC 20150504T124743 - copia\_Entidades\obj\Debug\_Entidades.pdb
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\_Entidades.dll.config
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\_Entidades.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\_Entidades.pdb
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\obj\Debug\_Entidades.dll
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\obj\Debug\_Entidades.pdb
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\_Entidades.dll.config
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\EntityFramework.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\EntityFramework.SqlServer.dll
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\EntityFramework.xml
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\EntityFramework.SqlServer.xml
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\EntityFramework.resources.dll
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\EntityFramework.SqlServer.resources.dll
-D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\System.Web.Mvc.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
@@ -23,6 +16,9 @@ D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.Owin.Security.d
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.Owin.Security.OAuth.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Newtonsoft.Json.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Owin.dll
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\System.Web.Mvc.dll
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\EntityFramework.xml
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\EntityFramework.SqlServer.xml
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
@@ -31,6 +27,11 @@ D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.Owin.Security.x
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\Newtonsoft.Json.xml
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\EntityFramework.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\EntityFramework.SqlServer.resources.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\Microsoft.AspNet.Identity.Core.resources.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 D:\Andres\VisualStudio\TicketsMVC\_Entidades\bin\Debug\es\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\obj\Debug\_Entidades.dll
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\obj\Debug\_Entidades.pdb
+D:\Andres\VisualStudio\TicketsMVC\_Entidades\obj\Debug\_Entidades.csprojResolveAssemblyReference.cache

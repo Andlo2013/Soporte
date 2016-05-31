@@ -27,18 +27,19 @@
                         <li>@Html.ActionLink("Empresas", "Index", "si_Empresa", new { Area = "supportSI" }, new { })</li>
                         <li>@Html.ActionLink("Planes", "Index", "si_Plan", new { Area = "supportSI" }, new { })</li>
                         <li>@Html.ActionLink("Contratos", "Index", "si_Contrato", new { Area = "supportSI" }, new { })</li>
+                        <li> @Html.ActionLink("Tickets", "Index", "si_Ticket", new { Area = "supportSI" }, new { }) </li>
                         <li>@Html.ActionLink("Crear Usuario", "Register", "Account", new { Area = "" }, new { })</li>
                     }
                     else if (User.Identity.IsAuthenticated && User.IsInRole("Cliente"))
                     {
-                        <li> @Html.ActionLink("Soporte", "Index", "cli_Ticket",new { Area = "supportSI" }, new { }) </li>
+                        <li> @Html.ActionLink("Soporte", "Index", "cli_Ticket",new { Area = "Cliente" }, new { }) </li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container-full miclass body-content">
         @RenderBody()
         <hr />
         <footer>

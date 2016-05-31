@@ -205,8 +205,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Cliente\ClienteAreaRegistration.cs" />
     <Compile Include="Areas\Cliente\Controllers\SoporteController.cs" />
-    <Compile Include="Areas\Cliente\Models\cliTicketsDETModel.cs" />
-    <Compile Include="Areas\Cliente\Models\cliTicketsModel.cs" />
+    <Compile Include="Areas\_CommonModel\TicketsDETModel.cs" />
+    <Compile Include="Areas\_CommonModel\TicketsModel.cs" />
+    <Compile Include="Areas\supportSI\Controllers\si_TicketController.cs" />
     <Compile Include="SentenciasSQL\_SQLCliente1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -231,6 +232,11 @@
     </Compile>
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SentenciasSQL\_SQLSupport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_SQLSupport.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +244,7 @@
     <Content Include="Content\appStyle.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -299,7 +306,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Content\_homeIndex.css" />
-    <Content Include="Content\jqueryUI.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -323,6 +329,13 @@
     <Content Include="Areas\Cliente\Views\Soporte\Index.cshtml" />
     <Content Include="Areas\Cliente\Views\Soporte\Answer.cshtml" />
     <Content Include="Areas\Cliente\Views\Soporte\AnswerShow.cshtml" />
+    <Content Include="Areas\supportSI\Views\si_Ticket\Create.cshtml" />
+    <Content Include="Areas\supportSI\Views\si_Ticket\Delete.cshtml" />
+    <Content Include="Areas\supportSI\Views\si_Ticket\Details.cshtml" />
+    <Content Include="Areas\supportSI\Views\si_Ticket\Edit.cshtml" />
+    <Content Include="Areas\supportSI\Views\si_Ticket\Index.cshtml" />
+    <Content Include="Areas\supportSI\Views\si_Ticket\Answer.cshtml" />
+    <Content Include="Areas\supportSI\Views\si_Ticket\AnswerShow.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -450,6 +463,7 @@
     <Content Include="Scripts\_02commonQuerys.js" />
     <Content Include="Scripts\_account.js" />
     <Content Include="Scripts\_contrato.js" />
+    <Content Include="Scripts\_jtSoporte_SI.js" />
     <Content Include="Scripts\_jtSoporte.js" />
     <Content Include="Scripts\_jtSoporteDET.js" />
     <Content Include="Scripts\_references.js" />
@@ -529,6 +543,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Cliente\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -552,6 +567,10 @@
     <EmbeddedResource Include="SentenciasSQL\_SQLCliente.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>_SQLCliente1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SentenciasSQL\_SQLSupport.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>_SQLSupport.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

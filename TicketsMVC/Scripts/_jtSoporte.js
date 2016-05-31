@@ -7,7 +7,7 @@ function _initialize() {
 function _table() {
     $('#SoporteTable').jtable({
         title: 'Tickets ingresados',
-        sorting: true,
+        sorting: false,
         paging: true, //Enable paging
         pageSize: 15,
         actions: {
@@ -18,14 +18,53 @@ function _table() {
 
         fields: {
 
+           
+
+            id: {
+                title: 'Ticket',
+                width: '7%'
+            },
+
+            Fecha: {
+                title: 'Fecha',
+                width: '10%',
+                type: 'date'
+            },
+
+            Pregunta: {
+                title: 'Pregunta',
+                width: '35%',
+                sorting: false
+            },
+
+            Prioridad: {
+                title: 'Prioridad',
+                width: '12%'
+            },
+
+            Estado: {
+                title: 'Estado',
+                width: '8%'
+            },
+
+            Categoria: {
+                title: 'Categoría',
+                width: '15%'
+            },
+
+            Tiempo: {
+                title: 'Tiempo',
+                width: '5%'
+            },
             //CHILD TABLE 
             Detalle: {
                 title: 'Ver',
-                width: '5%',
+                width: '4%',
                 sorting: false,
                 display: function (studentData) {
                     //Create an image that will be used to open child table
-                    var $img = $('<img class="icon" src="/images/detail.png" title="Ver respuestas"/>');
+                    //var $img = $('<img class="icon" src="/images/detail.png" title="Ver respuestas"/>');
+                    var $img = $('<label class="btn btn-info" title="Ver respuestas">Ver</label>');
                     //Open child table when user clicks the image
                     $img.click(function () {
                         $('#SoporteTable').jtable('openChildTable',
@@ -58,7 +97,19 @@ function _table() {
                                         },
                                         Mensaje: {
                                             title: 'Mensaje',
-                                            width: '60%'
+                                            width: '50%'
+                                        },
+                                        File1: {
+                                            title: 'File 1',
+                                            width: '10%'
+                                        },
+                                        File2: {
+                                            title: 'File 2',
+                                            width: '10%'
+                                        },
+                                        File3: {
+                                            title: 'File 3',
+                                            width: '10%'
                                         },
                                         Minutos: {
                                             title: 'Minutos',
@@ -74,54 +125,17 @@ function _table() {
                 }
             },
 
-            id: {
-                title: 'Ticket',
-                width: '10%'
-            },
-
-            Categoria: {
-                title: 'Categoría',
-                width: '15%'
-            },
-
-            Usuario: {
-                title: 'Usuario',
-                width: '23%'
-            },
-
-            Fecha: {
-                title: 'Fecha',
-                width: '10%',
-                type: 'date'
-            },
-
-            Tecnico: {
-                title: 'Técnico',
-                width: '20%'
-            },
-
-            Prioridad: {
-                title: 'Prioridad',
-                width: '12%'
-            },
-
-            Estado: {
-                title: 'Estado',
-                width: '10%'
-            },
-
             Responder: {
                 title: 'Pre',
-                width: '5%',
+                width: '4%',
                 sorting: false,
                 display: function (studentData) {
                     //Create an image that will be used to open child table
-                    var $img = $('<a href="/Cliente/Soporte/Answer/'+studentData.record.UUID+'"><img class="icon" src="/images/pregunta.png" title="Preguntar"/></a>');
+                    var $img = $('<a class="btn btn-success" href="/Cliente/Soporte/Answer/' + studentData.record.UUID + '">SMS</a>');
                     //Return image to show on the person row
                     return $img;
                 }
             }
-
         }
     });
     $('#SoporteTable').jtable('load');

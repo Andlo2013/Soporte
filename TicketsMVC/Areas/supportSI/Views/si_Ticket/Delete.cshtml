@@ -1,0 +1,120 @@
+﻿@model _Entidades.Ticket
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Contrato.obsContrato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contrato.obsContrato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecnico.nombreTecnico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecnico.nombreTecnico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TicketCategoria.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TicketCategoria.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsersId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsersId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaINI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaINI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaFIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaFIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cmbPrioridadId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cmbPrioridadId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cmbEstadoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cmbEstadoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumDetalle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumDetalle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UUID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UUID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstReg)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

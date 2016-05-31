@@ -61,7 +61,7 @@ namespace TicketsMVC.SentenciasSQL {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a answer_cliNew @userName,@TicketUUID,@TeamViewer,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3.
+        ///   Busca una cadena traducida similar a answer_New @userName,@TicketUUID,@TeamViewer,@Minutos,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3.
         /// </summary>
         internal static string GuardaAnswer {
             get {

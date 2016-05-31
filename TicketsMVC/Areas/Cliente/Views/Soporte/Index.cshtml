@@ -1,18 +1,18 @@
-﻿@model IEnumerable<TicketsMVC.Areas.Cliente.Models.cliTicketsModel>
+﻿@model IEnumerable<TicketsMVC.Areas._CommonModel.TicketsModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-@section styles {
-    <link rel="stylesheet" href="~/Content/appStyle.css" />
+    @section styles {
+        <link rel="stylesheet" href="~/Content/appStyle.css" />
     }
 
-<h2>Tickets</h2>
+    <h2>Tickets</h2>
 
-<p>
-    @Html.ActionLink("Nuevo Ticket", "Create")
-</p>
+    <p>
+        @Html.ActionLink("Nuevo Ticket", "Create")
+    </p>
 
     @Html.Partial("~/Views/_common/_showErrors.cshtml")
 
@@ -24,8 +24,6 @@
     <p>Tiempo Consumido: @ViewBag.MinutosUTI</p>
 
     <div id="SoporteTable"></div>
-
-    
 
     @section Scripts {
 

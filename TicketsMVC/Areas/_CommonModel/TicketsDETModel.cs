@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TicketsMVC.Areas.Cliente.Models
+namespace TicketsMVC.Areas._CommonModel
 {
-    public class cliTicketsDETModel
+    public class TicketsDETModel
     {
 
         public int id { get; set; }
@@ -13,6 +13,8 @@ namespace TicketsMVC.Areas.Cliente.Models
         public int TicketID { get; set; }
 
         public string TicketUUID { get; set; }
+
+        public string TeamViewer { get; set; }
 
         public DateTime Fecha { get; set; }
 
@@ -23,6 +25,10 @@ namespace TicketsMVC.Areas.Cliente.Models
         public string Usuario { get; set; }
 
         public string Mensaje { get; set; }
+
+        public string File1 { get; set; }
+        public string File2 { get; set; }
+        public string File3 { get; set; }
 
 
     }
