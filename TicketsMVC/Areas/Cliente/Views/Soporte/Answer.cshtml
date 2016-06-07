@@ -41,6 +41,11 @@
             </div>
         </div>
 
+        
+        <div>
+            <input type="file" name="UploadFile" id="txtUploadFile" class="makethispretty" multiple />
+        </div>  
+        
         <div class="form-group">
             @Html.LabelFor(model => model.File1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="form-group">
@@ -73,3 +78,8 @@
 <div>
     @Html.ActionLink("Tickets", "Index")
 </div>
+
+@section Scripts {
+
+    <script src="~/Scripts/_uploadFile.js"></script>
+}

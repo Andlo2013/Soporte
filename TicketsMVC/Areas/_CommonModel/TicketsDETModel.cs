@@ -26,6 +26,8 @@ namespace TicketsMVC.Areas._CommonModel
 
         public string Mensaje { get; set; }
 
+        public string Observacion { get; set; }
+
         public string File1 { get; set; }
         public string File2 { get; set; }
         public string File3 { get; set; }

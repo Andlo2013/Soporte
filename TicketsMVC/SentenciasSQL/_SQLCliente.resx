@@ -130,7 +130,11 @@
     <comment>Ejecuta PA que recupera los tickets</comment>
   </data>
   <data name="RecuperaTicketsDET" xml:space="preserve">
-    <value>ticket_cliDetalle @UUID</value>
+    <value>ticket_cliDetalle @UUID,@startIndex,@perPage</value>
     <comment>Ejecuta PA que recupera el detalle de las respuestas</comment>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>uploadImage @id,@imageNumber,@FileName</value>
+    <comment>Ejecuta PA actualiza la Base de datos</comment>
   </data>
 </root>

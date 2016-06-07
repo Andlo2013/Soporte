@@ -88,11 +88,20 @@ namespace TicketsMVC.SentenciasSQL {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ticket_cliDetalle @UUID.
+        ///   Busca una cadena traducida similar a ticket_cliDetalle @UUID,@startIndex,@perPage.
         /// </summary>
         internal static string RecuperaTicketsDET {
             get {
                 return ResourceManager.GetString("RecuperaTicketsDET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a uploadImage @id,@imageNumber,@FileName.
+        /// </summary>
+        internal static string UploadImage {
+            get {
+                return ResourceManager.GetString("UploadImage", resourceCulture);
             }
         }
     }

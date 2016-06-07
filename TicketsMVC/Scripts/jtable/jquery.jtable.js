@@ -544,7 +544,7 @@ THE SOFTWARE.
         *************************************************************************/
         _addRecordsToTable: function (records) {
             var self = this;
-
+            
             $.each(records, function (index, record) {
                 self._addRow(self._createRowFromRecord(record));
             });
@@ -2133,12 +2133,13 @@ THE SOFTWARE.
                 }
 
                 self._onRecordAdded(data);
+                console.log('..Por agregar');
                 self._addRow(
                     self._createRowFromRecord(data.Record), {
                         isNewRow: true,
                         animationsEnabled: options.animationsEnabled
                     });
-
+                console.log('..Agregado');
                 options.success(data);
             };
 
@@ -2257,11 +2258,12 @@ THE SOFTWARE.
                     self._setEnabledOfDialogButton($saveButton, true, self.options.messages.save);
                     return;
                 }
-
                 self._onRecordAdded(data);
                 self._addRow(
                     self._createRowFromRecord(data.Record), {
-                        isNewRow: true
+                        isNewRow: true,
+                        //..Andlo Agrega la nueva fila en la parte superior
+                        index: 0
                     });
                 self._$addRecordDiv.dialog("close");
             };
@@ -2305,6 +2307,7 @@ THE SOFTWARE.
 
         _onRecordAdded: function (data) {
             this._trigger("recordAdded", null, { record: data.Record, serverResponse: data });
+            
         }
 
     });
