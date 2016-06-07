@@ -51,7 +51,7 @@ namespace TicketsMVC.Areas.Cliente.Controllers
         // POST => Guarda ticket
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(string teamViewer, string Mensaje, string observacion,
+        public ActionResult CreateANT(string teamViewer, string Mensaje, string observacion,
                                     HttpPostedFileBase File1, HttpPostedFileBase File2, HttpPostedFileBase File3)
         {
             try
@@ -76,6 +76,38 @@ namespace TicketsMVC.Areas.Cliente.Controllers
             }
             ViewBag.errores = m_errors;
             return View();
+        }
+        // POST => Guarda ticket
+        [HttpPost]
+        public JsonResult Create(string teamViewer, string Pregunta)
+        {
+            try
+            {
+                m_errors = "";
+                if (_Validar(teamViewer, Pregunta))
+                {
+                    SqlParameter[] parametros = clsUtilidades._ParamsSQL(
+                        new string[] {"@userName","@TeamViewer","@Mensaje","@Observaciones",
+                                    "@Archivo1","@Archivo2","@Archivo3" },
+                        new object[] {User.Identity.Name,teamViewer,Pregunta,
+                                "","","",""});
+                    //db.Database.ExecuteSqlCommand(_SQLCliente.GuardaTickets, parametros);
+
+                    DbRawSqlQuery<TicketsModel> data = db.Database.SqlQuery<TicketsModel>
+                                                           (_SQLCliente.GuardaTickets, parametros);
+
+                    List<TicketsModel> record = data.ToList();
+                    if (record != null && record.Count == 1)
+                    {
+                        return Json(new { Result = "OK", Record = record[0] }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+                return Json(new { Result = "ERROR", m_errors });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Result = "ERROR", Message = ex.Message });
+            }
         }
 
         // GET => Detalle de tickets(Reemplazado por jtable)

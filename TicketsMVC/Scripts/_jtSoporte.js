@@ -39,8 +39,10 @@ function _masterTable() {
         sorting: false,
         paging: true, //Enable paging
         pageSize: 15,
+        _textNewRecord: 'Nuevo Ticket',
         actions: {
-            listAction: '/Cliente/soporte/DetailsTicket'
+            listAction: '/Cliente/soporte/DetailsTicket',
+            createAction: '/Cliente/Soporte/create',
         },
 
         //CodTicket	Categoria	Usuario	Fecha	Tecnico	Prioridad	Estado
@@ -49,13 +51,21 @@ function _masterTable() {
 
             id: {
                 title: 'Ticket',
-                width: '7%'
+                width: '7%',
+                create: false
+            },
+
+            TeamViewer: {
+                title: "TeamViewer",
+                create: true,
+                visibility: 'hidden'
             },
 
             Fecha: {
                 title: 'Fecha',
                 width: '10%',
-                type: 'date'
+                type: 'date',
+                create: false
             },
 
             Pregunta: {
@@ -66,22 +76,26 @@ function _masterTable() {
 
             Prioridad: {
                 title: 'Prioridad',
-                width: '12%'
+                width: '12%',
+                create: false
             },
 
             Estado: {
                 title: 'Estado',
-                width: '8%'
+                width: '8%',
+                create: false
             },
 
             Categoria: {
                 title: 'Categoría',
-                width: '15%'
+                width: '15%',
+                create: false
             },
 
             Tiempo: {
                 title: 'Tiempo',
-                width: '5%'
+                width: '5%',
+                create: false
             },
 
             //CHILD TABLE 
@@ -89,7 +103,7 @@ function _masterTable() {
                 title: 'Ver',
                 width: '4%',
                 sorting: false,
-                messages:{addNewRecord: 'Nuevo Ticket'},
+                create: false,
                 display:_detailTable
             }
         }
@@ -108,6 +122,8 @@ function _detailTable (mainRecord) {
                 $img.closest('tr'),
                 {
                     title: 'Respuestas del ticket',
+                    _textNewRecord: 'Responder Ticket',
+                    _tableName:"answerTable",
                     paging: true, //Enable paging
                     pageSize: 10,
                     actions: {

@@ -49,6 +49,8 @@ THE SOFTWARE.
         options: {
 
             //Options
+            _textNewRecord: '',
+            _tableName:'',
             actions: {},
             fields: {},
             animationsEnabled: true,
@@ -132,6 +134,7 @@ THE SOFTWARE.
         *************************************************************************/
         _create: function () {
 
+            
             //Initialization
             this._normalizeFieldsOptions();
             this._initializeFields();
@@ -228,9 +231,11 @@ THE SOFTWARE.
             if (!self.options.title) {
                 return;
             }
-
-            var $titleDiv = $('<div />')
-                .addClass('jtable-title')
+            //..Andlo Nombre a la barra de título de la tabla para poder dar estilos diferentes en master detail
+            //'<div />'
+            var tableName = this.options._tableName !== "" ? 'id="'+this.options._tableName+'_tittle"' : "";
+            var $titleDiv = $('<div '+tableName+' />')
+                .addClass("jtable-title ")
                 .appendTo(self._$mainContainer);
 
             self._jqueryuiThemeAddClass($titleDiv, 'ui-widget-header');
@@ -263,7 +268,10 @@ THE SOFTWARE.
         /* Creates the table.
         *************************************************************************/
         _createTable: function () {
-            this._$table = $('<table></table>')
+            //..Andlo: Asigna nombre tabla para dar estilos diferentes en master detail
+            //'<table></table>'
+            var tableName = this.options._tableName !== "" ? 'id="' + this.options._tableName + '"' : "";
+            this._$table = $('<table '+tableName+'></table>')
                 .addClass('jtable')
                 .appendTo(this._$mainContainer);
 
@@ -999,7 +1007,6 @@ THE SOFTWARE.
         /* Adds a new item to the toolbar.
         *************************************************************************/
         _addToolBarItem: function (item) {
-
             //Check if item is valid
             if ((item == undefined) || (item.text == undefined && item.icon == undefined)) {
                 this._logWarn('Can not add tool bar item since it is not valid!');
@@ -1027,7 +1034,7 @@ THE SOFTWARE.
 
             //icon property
             if (item.icon) {
-                var $icon = $('<span class="jtable-toolbar-item-icon"></span>').appendTo($toolBarItem);
+                var $icon = $('<span class="jtable-toolbar-item-icon "></span>').appendTo($toolBarItem);
                 if (item.icon === true) {
                     //do nothing
                 } else if ($.type(item.icon === 'string')) {
@@ -1039,7 +1046,7 @@ THE SOFTWARE.
             if (item.text) {
                 $('<span class=""></span>')
                     .html(item.text)
-                    .addClass('jtable-toolbar-item-text').appendTo($toolBarItem);
+                    .addClass("jtable-toolbar-item-text").appendTo($toolBarItem);
             }
 
             //click event
@@ -2028,7 +2035,8 @@ THE SOFTWARE.
                 width: 'auto',
                 minWidth: '300',
                 modal: true,
-                title: self.options.messages.addNewRecord,
+                //..Andlo Titulo de la ventana nuevo
+                title: self.options._textNewRecord!==""?self.options._textNewRecord:self.options.messages.addNewRecord,
                 buttons:
                         [{ //Cancel button
                             text: self.options.messages.cancel,
@@ -2062,7 +2070,9 @@ THE SOFTWARE.
                 self._addToolBarItem({
                     icon: true,
                     cssClass: 'jtable-toolbar-item-add-record',
-                    text: self.options.messages.addNewRecord,
+                    //..Andlo Mensaje de los botones nuevo registro
+                    //text: self.options.messages.addNewRecord,
+                    text: self.options._textNewRecord !== "" ? self.options._textNewRecord : self.options.messages.addNewRecord,
                     click: function () {
                         self._showAddRecordForm();
                     }
@@ -2133,13 +2143,11 @@ THE SOFTWARE.
                 }
 
                 self._onRecordAdded(data);
-                console.log('..Por agregar');
                 self._addRow(
                     self._createRowFromRecord(data.Record), {
                         isNewRow: true,
                         animationsEnabled: options.animationsEnabled
                     });
-                console.log('..Agregado');
                 options.success(data);
             };
 

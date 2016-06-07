@@ -6,9 +6,27 @@
     height:32px;
 }
 
-div.upload input {
+.tituloanswer{
+    background-color:silver
+}
+
+
+
+#answerTable thead tr th{
+    background-color:#6699CC;
     
 }
+
+#answerTable_tittle{
+    background-color:#6699CC;
+}
+
+#answerTable_tittle span{
+    background-color:#5487BA;
+}
+
+
+
 
 .barra{   
     height:5px;
