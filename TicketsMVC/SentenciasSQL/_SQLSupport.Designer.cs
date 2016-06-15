@@ -61,7 +61,7 @@ namespace TicketsMVC.SentenciasSQL {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ticket_siIndex @startIndex,@perPage.
+        ///   Busca una cadena traducida similar a ticket_siIndex @startIndex,@perPage,@ticketNumero,@ticketEmpresa,@ticketPrioridad,@ticketEstado.
         /// </summary>
         internal static string RecuperaTickets {
             get {

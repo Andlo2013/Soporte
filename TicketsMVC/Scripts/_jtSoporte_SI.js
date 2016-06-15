@@ -1,15 +1,75 @@
 ﻿$(document).on("ready", _initialize);
 
+//mensajes en español
+var spanishMessages = {
+    serverCommunicationError: 'A ocurrido un error al intentar comunicarse con el servidor.',
+    loadingMessage: 'Recuperando registros...',
+    noDataAvailable: 'No se encontraron registros!',
+    addNewRecord: 'Nuevo Registro',
+    editRecord: 'Edit Record',
+    areYouSure: 'Are you sure?',
+    deleteConfirmation: 'This record will be deleted. Are you sure?',
+    save: 'Guardar',
+    saving: 'Guardando',
+    cancel: 'Cancelar',
+    deleteText: 'Eliminar',
+    deleting: 'Eliminando',
+    error: 'Error',
+    close: 'Cerrar',
+    cannotLoadOptionsFor: 'No se puede cargar las opciones para el campo {0}',
+    pagingInfo: 'Showing {0}-{1} of {2}',
+    pageSizeChangeLabel: 'Row count',
+    gotoPageLabel: 'Ir a página',
+    canNotDeletedRecords: 'No se puede eliminar {0} de {1} registros!',
+    deleteProggress: 'Eliminando {0} de {1} registros, processando...'
+};
+
+//Pone en español jtable
+$.extend(true, $.hik.jtable.prototype.options.messages, spanishMessages);
+
 function _initialize() {
-    _table();
+    _masterTable();
+    $("#limpiar").on("click", _btnlimpiar);
+    $("#buscar").on("click", _btnfiltro);
+    $("#buscar").trigger("click");
 }
 
-function _table() {
+function _btnfiltro(e) {
+    e.preventDefault();
+    _buscar();
+}
+
+function _btnlimpiar(e) {
+    e.preventDefault();
+    _limpiar();
+    _buscar();
+}
+
+function _buscar() {
+    $('#SoporteTable').jtable('load', {
+        ticketNumero: $('#ticketnumero').val(),
+        ticketEmpresa: $('#ticketempresa').val(),
+        ticketPrioridad: $('#ticketprioridad').val(),
+        ticketEstado: $('#ticketestado').val()
+    });
+}
+
+function _limpiar() {
+    $('#ticketnumero').val('');
+    $('#ticketempresa').val('');
+    $('#ticketprioridad').val('0');
+    $('#ticketestado').val('0');
+}
+
+function _masterTable() {
     $('#SoporteTable').jtable({
         title: 'Tickets ingresados',
         sorting: false,
         paging: true, //Enable paging
         pageSize: 15,
+        _cssRowStyle:
+            [{ campo: 'newMSG', operador: '>', valor: 0, clase: 'negrita' },
+             { campo: 'PrioridadID', operador: '==', valor: 2, clase: 'urgente' }],
         actions: {
             listAction: '/supportSI/si_Ticket/DetailsTicket'
         },
@@ -37,6 +97,7 @@ function _table() {
 
             Pregunta: {
                 title: 'Pregunta',
+                maxlength: 150,
                 width: '35%',
                 sorting: false
             },
@@ -66,90 +127,166 @@ function _table() {
                 width: '5%'
             },
 
-            //CHILD TABLE 
-            Detalle: {
-                title: '',
+            newMSG: {
+                title: 'MSG',
                 width: '5%',
-                sorting: false,
-                display: function (studentData) {
-                    //Create an image that will be used to open child table
-                    var $img = $('<label class="btn btn-info" title="Ver respuestas">Ver</label>');
-                    //Open child table when user clicks the image
-                    $img.click(function () {
-                        $('#SoporteTable').jtable('openChildTable',
-                                $img.closest('tr'),
-                                {
-                                    title: 'Respuestas del ticket',
-                                    actions: {
-                                        listAction: '/supportSI/si_Ticket/answerDetails/' + studentData.record.UUID
-                                    },
-                                    fields: {
-                                        SecRespta: {
-                                            title: 'Nro',
-                                            width: '5%',
-                                            display: function (data) {
-                                                var linkDET = data.record.SecRespta;
-                                                var identifier = data.record.id;
-                                                var $link = $('<a href="/supportSI/si_Ticket/AnswerShow/' + identifier + '">' + linkDET + '</a>');
-                                                $link.click(function () { });
-                                                return $link;
-                                            }
-                                        },
-                                        Fecha: {
-                                            title: 'Fecha',
-                                            width: '10%',
-                                            type: 'date'
-                                        },
-                                        Usuario: {
-                                            title: 'Usuario',
-                                            width: '15%'
-                                        },
-                                        Mensaje: {
-                                            title: 'Mensaje',
-                                            width: '50%'
-                                        },
-                                        TeamViewer: {
-                                            title: 'TeamViewer',
-                                            width: '10%'
-                                        },
-                                        File1: {
-                                            title: 'File 1',
-                                            width: '10%'
-                                        },
-                                        File2: {
-                                            title: 'File 2',
-                                            width: '10%'
-                                        },
-                                        File3: {
-                                            title: 'File 3',
-                                            width: '10%'
-                                        },
-                                        Minutos: {
-                                            title: 'Minutos',
-                                            width: '10%'
-                                        }
-                                    }
-                                }, function (data) { //opened handler
-                                    data.childTable.jtable('load');
-                                });
-                    });
-                    //Return image to show on the person row
-                    return $img;
-                }
+                create: false
             },
 
-            Responder: {
-                title: '',
-                width: '5%',
+            //CHILD TABLE 
+            Detalle: {
+                title: 'Ver',
+                width: '4%',
                 sorting: false,
-                display: function (studentData) {
-                    //Create an image that will be used to open child table
-                    var $img = $('<a class="btn btn-success" title="Nuevo mensaje" href="/supportSI/si_Ticket/Answer/' + studentData.record.UUID + '">SMS</a>');
-                    //Return image to show on the person row
-                    return $img;
-                }
+                display: _detailTable
             }
         }
     });
-    $('#SoporteTable').jtable('load');
+    $('#SoporteTable');
 }
+
+function _detailTable(mainRecord) {
+    //Create an image that will be used to open child table
+    var $img = $('<label id="' + mainRecord.record.UUID + '" class="btn btn-info" title="Ver respuestas">Ver</label>');
+    //Open child table when user clicks the image
+    $img.click(function () {
+        $('#SoporteTable').jtable('openChildTable',
+                $img.closest('tr'),
+                {
+                    title: 'Respuestas del ticket',
+                    paging: true, //Enable paging
+                    pageSize: 10,
+                    _textNewRecord: 'Responder Ticket',
+                    actions: {
+                        listAction: '/supportSI/si_Ticket/answerDetails/' + mainRecord.record.UUID,
+                        createAction: '/supportSI/si_Ticket/answerJSON/' + mainRecord.record.UUID,
+                    },
+                    fields: {
+                        SecRespta: {
+                            title: 'Nro',
+                            width: '5%',
+                            create:false,
+                            display: function (data) {
+                                var linkDET = data.record.SecRespta;
+                                var identifier = data.record.id;
+                                var $link = $('<a href="/supportSI/si_Ticket/AnswerShow/' + identifier + '">' + linkDET + '</a>');
+                                $link.click(function () { });
+                                return $link;
+                            }
+                        },
+                        Fecha: {
+                            title: 'Fecha',
+                            width: '10%',
+                            type: 'date',
+                            create: false
+                        },
+                        Usuario: {
+                            title: 'Usuario',
+                            width: '15%',
+                            create: false
+                        },
+                        Mensaje: {
+                            title: 'Mensaje',
+                            maxlength: 150,
+                            width: '30%',
+                            type: 'textarea',
+                        },
+                        Observacion: {
+                            title: 'Observacion',
+                            width: '0%',
+                            type: 'textarea',
+                            maxlength: 2000,
+                            create: true,
+                            visibility: 'hidden'
+                        },
+                        TeamViewer: {
+                            title: 'TeamViewer',
+                            maxlength: 12,
+                            width: '10%',
+                            create: false
+                        },
+                        File1: {
+                            title: 'File 1',
+                            width: '10%',
+                            create: false,
+                            display: function (data) {
+                                var $link = _linkUpload(data.record, mainRecord.record.UUID, 1);
+                                return $link;
+                            }
+                        },
+                        File2: {
+                            title: 'File 2',
+                            width: '10%',
+                            create: false,
+                            display: function (data) {
+                                var $link = _linkUpload(data.record, mainRecord.record.UUID, 2);
+                                return $link;
+                            }
+                        },
+                        File3: {
+                            title: 'File 3',
+                            width: '10%',
+                            create: false,
+                            display: function (data) {
+                                var $link = _linkUpload(data.record, mainRecord.record.UUID, 3);
+                                return $link;
+                            }
+                        },
+                        Minutos: {
+                            title: 'Minutos',
+                            width: '5%',
+                            type: 'number',
+                        }
+                    }
+                }, function (data) { //opened handler
+                    data.childTable.jtable('load');
+                });
+    });
+    //Return image to show on the person row
+    return $img;
+}
+
+//Crea el link del 'FILEUPLOAD' para cada registro en cada columna.
+function _linkUpload(record, ticketUUID, numeroImg) {
+
+    //setencia base para crear la interfaz de fileupload en tiempo de ejecución
+    var upload = '<div>' +
+        '<span class="btn btn-info fileinput-button">' +
+        '<i class="glyphicon glyphicon-plus"></i>' +
+        '<span id="nombre">Adjuntar</span>' +
+        '<input id="fileupload" data-ticket="ticket0" data-numeroImg="img0" data-name="name0" type="file" class="fileUpload" name="files[]" multiple="">' +
+        '</span></br>' +
+        '<div id="progress" class="barra">' +
+        '<div class="progress-bar progress-bar-primary"></div>' +
+        '</div>';
+    //recuperamos propiedades para no utilizar nombres muy extensos
+    var $link;
+    var identifier = record.id;
+    var fileName = "";
+    switch (numeroImg) {
+        case 1:
+            fileName = record.File1;
+            break;
+        case 2:
+            fileName = record.File2;
+            break;
+        case 3:
+            fileName = record.File3;
+            break;
+    }
+
+    //si tiene un nombre de archivo crea un link de descarga
+    if (fileName != null && fileName != "File") {
+        $link = $('<a href="/Uploads/' + identifier + '/' + fileName + '" download>' + fileName + '</a>');
+    }
+        //si no tiene un link de archivo crea el fileuploader identifcando cada controlador por su nombre
+    else {
+        $link = upload.replace("progress", "progress" + identifier + numeroImg);
+        $link = $link.replace("fileupload", "fileupload" + identifier + numeroImg);
+        $link = $link.replace("name0", identifier);
+        $link = $link.replace("ticket0", ticketUUID);
+        $link = $link.replace("img0", numeroImg);
+    }
+    return $link;
+}
+

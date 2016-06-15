@@ -61,7 +61,7 @@ namespace TicketsMVC.SentenciasSQL {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a answer_New @userName,@TicketUUID,@TeamViewer,@Minutos,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3.
+        ///   Busca una cadena traducida similar a answer_New @userName,@TicketUUID,@TeamViewer,@Minutos,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3,@whoSend.
         /// </summary>
         internal static string GuardaAnswer {
             get {
@@ -70,7 +70,7 @@ namespace TicketsMVC.SentenciasSQL {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ticket_cliNew @userName,@TeamViewer,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3.
+        ///   Busca una cadena traducida similar a ticket_cliNew @userName,@TeamViewer,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3,@whoSend.
         /// </summary>
         internal static string GuardaTickets {
             get {
@@ -79,7 +79,7 @@ namespace TicketsMVC.SentenciasSQL {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ticket_cliIndex @userName,@startIndex,@perPage.
+        ///   Busca una cadena traducida similar a ticket_cliIndex @userName,@startIndex,@perPage,@ticketNumero,@ticketEstado.
         /// </summary>
         internal static string RecuperaTickets {
             get {
@@ -88,7 +88,7 @@ namespace TicketsMVC.SentenciasSQL {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ticket_cliDetalle @UUID,@startIndex,@perPage.
+        ///   Busca una cadena traducida similar a ticket_cliDetalle @UUID,@startIndex,@perPage,@whoAsked.
         /// </summary>
         internal static string RecuperaTicketsDET {
             get {

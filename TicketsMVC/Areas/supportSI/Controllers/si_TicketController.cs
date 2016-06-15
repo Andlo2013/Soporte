@@ -16,25 +16,38 @@ using TicketsMVC.SentenciasSQL;
 
 namespace TicketsMVC.Areas.supportSI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class si_TicketController : Controller
     {
         private _SQLServer objSQLServer = new _SQLServer();
         private _Context db = new _Context();
         private string m_errors = "";
+        private string m_origin = "SUPPORT";
 
         // GET: supportSI/si_Tickets
         public ActionResult Index()
         {
+            ViewBag.cmbEstado = db.Combo
+                               .Where(x => x.Relacion == "ticket_estado")
+                               .OrderBy(x => x.Valor).ToList();
+            ViewBag.cmbPrioridad = db.Combo
+                           .Where(x => x.Relacion == "ticket_prioridad")
+                           .OrderBy(x => x.Valor).ToList();
+
             return View();
         }
 
         // JSON => Detalle de tickets
-        public JsonResult DetailsTicket(int jtStartIndex = 0, int jtPageSize = 0)
+        [HttpPost]
+        public JsonResult DetailsTicket(int ticketnumero = 0, string ticketempresa="",
+                                        int ticketprioridad = 0,int ticketestado = 0,
+                                        int jtStartIndex = 0, int jtPageSize = 0)
         {
             try
             {
-                SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@startIndex", "@perPage" },
-                                                                    new object[] { jtStartIndex, jtPageSize });
+                SqlParameter[] parametros = clsUtilidades._ParamsSQL(
+                            new string[] { "@startIndex", "@perPage", "@ticketNumero","@ticketEmpresa", "@ticketPrioridad", "@ticketEstado" },
+                            new object[] { jtStartIndex, jtPageSize,ticketnumero,ticketempresa,ticketprioridad,ticketestado });
                 DbRawSqlQuery<TicketsModel> data = db.Database.SqlQuery<TicketsModel>
                                                             (_SQLSupport.RecuperaTickets, parametros);
                 return Json(new { Result = "OK", Records = data.ToList() }, JsonRequestBehavior.AllowGet);
@@ -53,6 +66,38 @@ namespace TicketsMVC.Areas.supportSI.Controllers
         public ActionResult Answer(string id)
         {
             return View();
+        }
+
+        // POST => Guarda respuesta
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public JsonResult answerJSON(string id,  string Mensaje, string observacion,int Minutos)
+        {
+            try
+            {
+                m_errors = "";
+                if (_Validar("123", Mensaje))
+                {
+                    SqlParameter[] parametros = clsUtilidades._ParamsSQL(
+                        new string[] {"@userName","@TicketUUID","@TeamViewer","@Minutos","@Mensaje",
+                                    "@Observaciones","@Archivo1","@Archivo2","@Archivo3","@whoSend" },
+                        new object[] {User.Identity.Name,id,"Tecnico",Minutos,Mensaje,
+                                observacion,"","","",m_origin});
+                    DbRawSqlQuery<TicketsDETModel> data = db.Database.SqlQuery<TicketsDETModel>
+                                                           (_SQLCliente.GuardaAnswer, parametros);
+
+                    List<TicketsDETModel> record = data.ToList();
+                    if (record != null && record.Count == 1)
+                    {
+                        return Json(new { Result = "OK", Record = record[0] }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+                return Json(new { Result = "ERROR", m_errors });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Result = "ERROR", Message = ex.Message });
+            }
         }
 
         // POST => Guarda respuesta
@@ -88,12 +133,12 @@ namespace TicketsMVC.Areas.supportSI.Controllers
         }
 
         // JSON => Detalle de respuestas
-        public JsonResult answerDetails(string id)
+        public JsonResult answerDetails(string id, int jtStartIndex = 0, int jtPageSize = 0)
         {
             try
             {
-                SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@UUID" },
-                                                                    new object[] { id });
+                SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@UUID","@startIndex", "@perPage","@whoAsked" },
+                                                                    new object[] { id, jtStartIndex, jtPageSize, m_origin });
                 DbRawSqlQuery<TicketsDETModel> data = db.Database.SqlQuery<TicketsDETModel>
                                                             (_SQLCliente.RecuperaTicketsDET, parametros);
                 return Json(new { Result = "OK", Records = data.ToList() }, JsonRequestBehavior.AllowGet);

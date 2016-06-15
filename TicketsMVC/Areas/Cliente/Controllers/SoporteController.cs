@@ -19,20 +19,25 @@ using System.IO;
 
 namespace TicketsMVC.Areas.Cliente.Controllers
 {
+    [Authorize(Roles = "Cliente")]
     public class SoporteController : Controller
     {
         
         private _SQLServer objSQLServer = new _SQLServer();
         private _Context db = new _Context();
         private string m_errors = "";
-
+        private string m_origin = "CLIENT";
         //Métodos para los tickets
         #region Tickets
 
         // GET: Index ticket
         public ActionResult Index()
         {
-            try {
+            try
+            {
+                ViewBag.cmbEstado = db.Combo
+                               .Where(x => x.Relacion == "ticket_estado")
+                               .OrderBy(x => x.Valor).ToList();
                 _infoContrato();
                 return View();
             }
@@ -42,41 +47,6 @@ namespace TicketsMVC.Areas.Cliente.Controllers
             }
         }
 
-        // GET => Guarda ticket
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST => Guarda ticket
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateANT(string teamViewer, string Mensaje, string observacion,
-                                    HttpPostedFileBase File1, HttpPostedFileBase File2, HttpPostedFileBase File3)
-        {
-            try
-            {
-                m_errors = "";
-                if (_Validar(teamViewer, Mensaje))
-                {
-                    SqlParameter[] parametros = clsUtilidades._ParamsSQL(
-                        new string[] {"@userName","@TeamViewer","@Mensaje","@Observaciones",
-                                    "@Archivo1","@Archivo2","@Archivo3" },
-                        new object[] {User.Identity.Name,teamViewer,Mensaje,
-                                observacion,File1.FileName,File2.FileName,File3.FileName});
-                    db.Database.ExecuteSqlCommand(_SQLCliente.GuardaTickets, parametros);
-
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-            }
-            catch
-            {
-                m_errors = "Error al intentar guarda los datos";
-            }
-            ViewBag.errores = m_errors;
-            return View();
-        }
         // POST => Guarda ticket
         [HttpPost]
         public JsonResult Create(string teamViewer, string Pregunta)
@@ -88,10 +58,9 @@ namespace TicketsMVC.Areas.Cliente.Controllers
                 {
                     SqlParameter[] parametros = clsUtilidades._ParamsSQL(
                         new string[] {"@userName","@TeamViewer","@Mensaje","@Observaciones",
-                                    "@Archivo1","@Archivo2","@Archivo3" },
+                                    "@Archivo1","@Archivo2","@Archivo3","@whoSend" },
                         new object[] {User.Identity.Name,teamViewer,Pregunta,
-                                "","","",""});
-                    //db.Database.ExecuteSqlCommand(_SQLCliente.GuardaTickets, parametros);
+                                "","","","",m_origin});
 
                     DbRawSqlQuery<TicketsModel> data = db.Database.SqlQuery<TicketsModel>
                                                            (_SQLCliente.GuardaTickets, parametros);
@@ -106,32 +75,31 @@ namespace TicketsMVC.Areas.Cliente.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new { Result = "ERROR", Message = ex.Message });
+                //NO USAMOS EL EX POR SEGURIDAD
+                return Json(new { Result = "ERROR", Message = "ERROR: Al intentar generar el ticket" });
             }
         }
 
-        // GET => Detalle de tickets(Reemplazado por jtable)
-        public ActionResult Details(string id)
-        {
-            ViewBag.TicketUUID = id;
-            return View();
-        }
-
         // JSON => Detalle de tickets
-        public JsonResult DetailsTicket(int jtStartIndex = 0, int jtPageSize = 0)
+        [HttpPost]
+        public JsonResult DetailsTicket(int ticketnumero = 0, int ticketestado = 0,
+                                        int jtStartIndex = 0, int jtPageSize = 0)
         {
             try
             {
                 //jtStartIndex
-                SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@userName", "@startIndex","@perPage" },
-                                                                    new object[] { User.Identity.Name, jtStartIndex, jtPageSize });
+                SqlParameter[] parametros = clsUtilidades._ParamsSQL(
+                    new string[] { "@userName", "@ticketNumero", "@ticketEstado","@startIndex","@perPage"},
+                    new object[] { User.Identity.Name, ticketnumero, ticketestado, jtStartIndex, jtPageSize });
                 DbRawSqlQuery<TicketsModel> data = db.Database.SqlQuery<TicketsModel>
                                                             (_SQLCliente.RecuperaTickets, parametros);
-                return Json(new { Result = "OK", Records = data.ToList() }, JsonRequestBehavior.AllowGet);
+                List<TicketsModel> lis = data.ToList();
+                return Json(new { Result = "OK", Records = lis }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                return Json(new { Result = "ERROR", Message = ex.Message });
+                //NO USAMOS EL EX POR SEGURIDAD
+                return Json(new { Result = "ERROR", Message = "ERROR: Al intentar recuperar los tickets" });
             }
         }
 
@@ -139,43 +107,6 @@ namespace TicketsMVC.Areas.Cliente.Controllers
 
         //Métodos para las respuestas
         #region Answer
-
-        // GET => Guarda respuesta
-        public ActionResult Answer(string id)
-        {
-            return View();
-        }
-
-        // POST => Guarda respuesta
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Answer(string id, string teamViewer, string Mensaje, string observacion,
-                                    HttpPostedFileBase File1, HttpPostedFileBase File2, HttpPostedFileBase File3)
-        {
-            try
-            {
-                m_errors = "";
-                string s_File1 = File1 != null && File1.FileName.Trim() != "" ? File1.FileName : "";
-                string s_File2 = File2 != null && File2.FileName.Trim() != "" ? File2.FileName : "";
-                string s_File3 = File3 != null && File3.FileName.Trim() != "" ? File3.FileName : "";
-                if (_Validar(teamViewer, Mensaje))
-                {
-                    SqlParameter[] parametros = clsUtilidades._ParamsSQL(
-                        new string[] {"@userName","@TicketUUID","@TeamViewer","@Minutos","@Mensaje",
-                                    "@Observaciones","@Archivo1","@Archivo2","@Archivo3" },
-                        new object[] {User.Identity.Name,id,teamViewer,0,Mensaje,
-                                observacion,s_File1,s_File2,s_File3});
-                    db.Database.ExecuteSqlCommand(_SQLCliente.GuardaAnswer, parametros);
-                    return RedirectToAction("Index");
-                }
-            }
-            catch
-            {
-                m_errors = "Error al intentar guarda los datos";
-            }
-            ViewBag.errores = m_errors;
-            return View();
-        }
 
         // POST => Guarda respuesta
         [HttpPost]
@@ -189,23 +120,24 @@ namespace TicketsMVC.Areas.Cliente.Controllers
                 {
                     SqlParameter[] parametros = clsUtilidades._ParamsSQL(
                         new string[] {"@userName","@TicketUUID","@TeamViewer","@Minutos","@Mensaje",
-                                    "@Observaciones","@Archivo1","@Archivo2","@Archivo3" },
+                                    "@Observaciones","@Archivo1","@Archivo2","@Archivo3","@whoSend" },
                         new object[] {User.Identity.Name,id,teamViewer,0,Mensaje,
-                                observacion,"","",""});
+                                observacion,"","","",m_origin});
                     DbRawSqlQuery<TicketsDETModel> data = db.Database.SqlQuery<TicketsDETModel>
                                                            (_SQLCliente.GuardaAnswer, parametros);
 
-                    List<TicketsDETModel> record = data.ToList();
-                    if(record!=null && record.Count == 1)
+                    List<TicketsDETModel> anserRecord = data.ToList();
+                    if(anserRecord != null && anserRecord.Count == 1)
                     {
-                        return Json(new { Result = "OK", Record = record[0] }, JsonRequestBehavior.AllowGet);
+                        return Json(new { Result = "OK", Record = anserRecord[0]}, JsonRequestBehavior.AllowGet);
                     }
                 }
-                return Json(new { Result = "ERROR", m_errors});
+                return Json(new { Result = "ERROR", Message=m_errors});
             }
             catch(Exception ex)
             {
-                return Json(new { Result = "ERROR", Message = ex.Message });
+                //NO USAMOS EL EX POR SEGURIDAD
+                return Json(new { Result = "ERROR", Message = "ERROR: Al intentar guardar la respuesta" });
             }
         }
 
@@ -214,15 +146,17 @@ namespace TicketsMVC.Areas.Cliente.Controllers
         {
             try
             {
-                SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@UUID","@startIndex", "@perPage" },
-                                                                    new object[] { id,jtStartIndex,jtPageSize });
+                
+                SqlParameter[] parametros = clsUtilidades._ParamsSQL(new string[] { "@UUID","@startIndex", "@perPage","@whoAsked" },
+                                                                    new object[] { id,jtStartIndex,jtPageSize, m_origin });
                 DbRawSqlQuery<TicketsDETModel> data = db.Database.SqlQuery<TicketsDETModel>
                                                             (_SQLCliente.RecuperaTicketsDET, parametros);
-                return Json(new { Result = "OK", Records = data.ToList() }, JsonRequestBehavior.AllowGet);
+                return Json(new { Result = "OK", Records = data.ToList(), TotalRecordCount = 50 }, JsonRequestBehavior.AllowGet);
             }
             catch(Exception ex)
             {
-                return Json(new { Result = "ERROR", Message = ex.Message });
+                //NO USAMOS EL EX POR SEGURIDAD
+                return Json(new { Result = "ERROR", Message = "ERROR: Al intentar recuperar el detalle del ticket" });
             }
         }
 
@@ -335,12 +269,15 @@ namespace TicketsMVC.Areas.Cliente.Controllers
         {
             DataTable dt_infoContrato=objSQLServer._CargaDataTable("ticket_infoPlan",
                         new string[] { "@userName" }, new object[] { User.Identity.Name });
-            ViewBag.Empresa = dt_infoContrato.Rows[0]["Empresa"].ToString().Trim();
-            ViewBag.Plan = dt_infoContrato.Rows[0]["Plan"].ToString().Trim();
-            ViewBag.Inicia = dt_infoContrato.Rows[0]["Inicia"].ToString().Trim();
-            ViewBag.Termina = dt_infoContrato.Rows[0]["Termina"].ToString().Trim();
-            ViewBag.Minutos = dt_infoContrato.Rows[0]["Minutos"].ToString().Trim();
-            ViewBag.MinutosUTI = dt_infoContrato.Rows[0]["MinutosUTI"].ToString().Trim();
+            if (dt_infoContrato != null && dt_infoContrato.Rows.Count == 1)
+            {
+                ViewBag.Empresa = dt_infoContrato.Rows[0]["Empresa"].ToString().Trim();
+                ViewBag.Plan = dt_infoContrato.Rows[0]["Plan"].ToString().Trim();
+                ViewBag.Inicia = dt_infoContrato.Rows[0]["Inicia"].ToString().Trim();
+                ViewBag.Termina = dt_infoContrato.Rows[0]["Termina"].ToString().Trim();
+                ViewBag.Minutos = dt_infoContrato.Rows[0]["Minutos"].ToString().Trim();
+                ViewBag.MinutosUTI = dt_infoContrato.Rows[0]["MinutosUTI"].ToString().Trim();
+            }
         }
 
         private bool _Validar(string teamViewer,string Mensaje)
@@ -362,4 +299,5 @@ namespace TicketsMVC.Areas.Cliente.Controllers
         #endregion
 
     }
+
 }

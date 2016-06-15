@@ -55,9 +55,20 @@ namespace _Entidades
         [Display(Name = "Archivo 3")]
         public string File3 { get; set; }
 
+        [Display(Name = "Leído")]
+        [Required(ErrorMessage = "El campo leído es obligatorio")]
+        public bool isReaded { get; set; }
+
+        [Display(Name = "Origen")]
+        [Required(ErrorMessage = "El campo origen es obligatorio")]
+        [StringLength(7,ErrorMessage ="Máximo 7 caracteres")]
+        public string whoSend { get; set; }
+
         [Display(Name = "Activo")]
         [Required(ErrorMessage = "El estado del registro es obligatoria")]
         public bool EstReg { get; set; }
+
+       
 
         //Relaciones
         public virtual Ticket Ticket { get; set; }

@@ -104,6 +104,18 @@
     <Compile Include="Migrations\201605311516087_removeColCodigo.Designer.cs">
       <DependentUpon>201605311516087_removeColCodigo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606082128307_CampoLeido.cs" />
+    <Compile Include="Migrations\201606082128307_CampoLeido.Designer.cs">
+      <DependentUpon>201606082128307_CampoLeido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606082201063_CampoWhoSend.cs" />
+    <Compile Include="Migrations\201606082201063_CampoWhoSend.Designer.cs">
+      <DependentUpon>201606082201063_CampoWhoSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606082228004_Changes.cs" />
+    <Compile Include="Migrations\201606082228004_Changes.Designer.cs">
+      <DependentUpon>201606082228004_Changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_Context.cs" />
@@ -154,6 +166,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605311516087_removeColCodigo.resx">
       <DependentUpon>201605311516087_removeColCodigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606082128307_CampoLeido.resx">
+      <DependentUpon>201606082128307_CampoLeido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606082201063_CampoWhoSend.resx">
+      <DependentUpon>201606082201063_CampoWhoSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606082228004_Changes.resx">
+      <DependentUpon>201606082228004_Changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

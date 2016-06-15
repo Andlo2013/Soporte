@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GuardaAnswer" xml:space="preserve">
-    <value>answer_New @userName,@TicketUUID,@TeamViewer,@Minutos,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3</value>
+    <value>answer_New @userName,@TicketUUID,@TeamViewer,@Minutos,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3,@whoSend</value>
     <comment>Ejecuta PA que guarda una respuesta del cliente</comment>
   </data>
   <data name="GuardaTickets" xml:space="preserve">
-    <value>ticket_cliNew @userName,@TeamViewer,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3</value>
+    <value>ticket_cliNew @userName,@TeamViewer,@Mensaje,@Observaciones,@Archivo1,@Archivo2,@Archivo3,@whoSend</value>
     <comment>Ejecuta PA que guarda los tickets</comment>
   </data>
   <data name="RecuperaTickets" xml:space="preserve">
-    <value>ticket_cliIndex @userName,@startIndex,@perPage</value>
+    <value>ticket_cliIndex @userName,@startIndex,@perPage,@ticketNumero,@ticketEstado</value>
     <comment>Ejecuta PA que recupera los tickets</comment>
   </data>
   <data name="RecuperaTicketsDET" xml:space="preserve">
-    <value>ticket_cliDetalle @UUID,@startIndex,@perPage</value>
+    <value>ticket_cliDetalle @UUID,@startIndex,@perPage,@whoAsked</value>
     <comment>Ejecuta PA que recupera el detalle de las respuestas</comment>
   </data>
   <data name="UploadImage" xml:space="preserve">

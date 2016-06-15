@@ -46,3 +46,6 @@ D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.csproj.Gener
 D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.dll
 D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.pdb
 D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.Migrations.removeColCodigo.resources
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.Migrations.CampoLeido.resources
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.Migrations.CampoWhoSend.resources
+D:\Andres\VisualStudio\TicketsMVC\DataTickets\obj\Debug\DataTickets.Migrations.Changes.resources

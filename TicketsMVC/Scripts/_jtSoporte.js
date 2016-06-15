@@ -1,4 +1,4 @@
-﻿$(document).on("ready", _initializeJTSoporte);
+﻿$(document).on("ready", _iniJTSoporte);
 //mensajes en español
 var spanishMessages = {
     serverCommunicationError: 'A ocurrido un error al intentar comunicarse con el servidor.',
@@ -27,8 +27,11 @@ var spanishMessages = {
 $.extend(true, $.hik.jtable.prototype.options.messages, spanishMessages);
 
 //Inicializa este script
-function _initializeJTSoporte() {
+function _iniJTSoporte() {
+    
     _masterTable();
+    $('#buscar').on('click', _filtro);
+    $('#buscar').trigger("click");
 }
 
 //Crea la tabla principal
@@ -40,9 +43,14 @@ function _masterTable() {
         paging: true, //Enable paging
         pageSize: 15,
         _textNewRecord: 'Nuevo Ticket',
+        _cssRowStyle:
+            [{ campo: 'newMSG', operador: '>', valor: 0,clase:'negrita' },
+             { campo: 'EstadoID', operador: '==', valor: 3, clase: 'solucionado' },
+            { campo: 'EstadoID', operador: '==', valor: 4, clase: 'rechazado' }],
+    
         actions: {
             listAction: '/Cliente/soporte/DetailsTicket',
-            createAction: '/Cliente/Soporte/create',
+            createAction: '/Cliente/Soporte/create'
         },
 
         //CodTicket	Categoria	Usuario	Fecha	Tecnico	Prioridad	Estado
@@ -58,6 +66,7 @@ function _masterTable() {
             TeamViewer: {
                 title: "TeamViewer",
                 create: true,
+                maxlength: 12,
                 visibility: 'hidden'
             },
 
@@ -71,7 +80,9 @@ function _masterTable() {
             Pregunta: {
                 title: 'Pregunta',
                 width: '35%',
-                sorting: false
+                sorting: false,
+                maxlength:150,
+                type:'textarea'
             },
 
             Prioridad: {
@@ -98,6 +109,12 @@ function _masterTable() {
                 create: false
             },
 
+            newMSG: {
+                title: 'MSG',
+                width: '5%',
+                create: false
+            },
+
             //CHILD TABLE 
             Detalle: {
                 title: 'Ver',
@@ -108,7 +125,6 @@ function _masterTable() {
             }
         }
     });
-    $('#SoporteTable').jtable('load');
 }
 
 //Crea la tabla detalle
@@ -123,12 +139,11 @@ function _detailTable (mainRecord) {
                 {
                     title: 'Respuestas del ticket',
                     _textNewRecord: 'Responder Ticket',
-                    _tableName:"answerTable",
                     paging: true, //Enable paging
                     pageSize: 10,
                     actions: {
                         listAction: '/Cliente/Soporte/answerDetails/' + mainRecord.record.UUID,
-                        createAction: '/Cliente/Soporte/answerJSON/' + mainRecord.record.UUID,
+                        createAction: '/Cliente/Soporte/answerJSON/' + mainRecord.record.UUID
                     },
                     fields: {
                         SecRespta: {
@@ -154,19 +169,25 @@ function _detailTable (mainRecord) {
                             width: '15%',
                             create: false
                         },
-                        Mensaje: {
-                            title: 'Mensaje',
-                            width: '50%'
-                        },
+
                         TeamViewer: {
                             title: 'TeamViewer',
                             width: '0%',
                             create: true,
-                            visibility:'hidden'
+                            visibility: 'hidden'
                         },
+                        Mensaje: {
+                            title: 'Mensaje',
+                            type: 'textarea',
+                            maxlength: 150,
+                            width: '50%'
+                        },
+                        
                         Observacion: {
-                            title: 'Observacion',
+                            title: 'Observación',
                             width: '0%',
+                            type: 'textarea',
+                            maxlength: 2000,
                             create: true,
                             visibility: 'hidden'
                         },
@@ -254,3 +275,12 @@ function _linkUpload(record,ticketUUID,numeroImg) {
     }
     return $link;
 }
+
+function _filtro(e) {
+    e.preventDefault();
+    $('#SoporteTable').jtable('load', {
+        ticketNumero: $('#ticketnumero').val(),
+        ticketEstado: $('#ticketestado').val()
+    });
+}
+

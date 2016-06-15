@@ -30,6 +30,7 @@ THE SOFTWARE.
 /************************************************************************
 * CORE jTable module                                                    *
 *************************************************************************/
+
 (function ($) {
 
     var unloadingPage;
@@ -50,7 +51,7 @@ THE SOFTWARE.
 
             //Options
             _textNewRecord: '',
-            _tableName:'',
+            _cssRowStyle: [],
             actions: {},
             fields: {},
             animationsEnabled: true,
@@ -133,8 +134,6 @@ THE SOFTWARE.
         /* Contructor.
         *************************************************************************/
         _create: function () {
-
-            
             //Initialization
             this._normalizeFieldsOptions();
             this._initializeFields();
@@ -231,10 +230,8 @@ THE SOFTWARE.
             if (!self.options.title) {
                 return;
             }
-            //..Andlo Nombre a la barra de título de la tabla para poder dar estilos diferentes en master detail
-            //'<div />'
-            var tableName = this.options._tableName !== "" ? 'id="'+this.options._tableName+'_tittle"' : "";
-            var $titleDiv = $('<div '+tableName+' />')
+            
+            var $titleDiv = $('<div/>')
                 .addClass("jtable-title ")
                 .appendTo(self._$mainContainer);
 
@@ -268,10 +265,7 @@ THE SOFTWARE.
         /* Creates the table.
         *************************************************************************/
         _createTable: function () {
-            //..Andlo: Asigna nombre tabla para dar estilos diferentes en master detail
-            //'<table></table>'
-            var tableName = this.options._tableName !== "" ? 'id="' + this.options._tableName + '"' : "";
-            this._$table = $('<table '+tableName+'></table>')
+            this._$table = $('<table></table>')
                 .addClass('jtable')
                 .appendTo(this._$mainContainer);
 
@@ -521,12 +515,15 @@ THE SOFTWARE.
         /* Creates a row from given record
         *************************************************************************/
         _createRowFromRecord: function (record) {
+            
+
             var $tr = $('<tr></tr>')
-                .addClass('jtable-data-row')
+                .addClass('jtable-data-row ')
                 .attr('data-record-key', this._getKeyValueOfRecord(record))
                 .data('record', record);
 
             this._addCellsToRowUsingRecord($tr);
+            
             return $tr;
         },
 
@@ -534,16 +531,43 @@ THE SOFTWARE.
         *************************************************************************/
         _addCellsToRowUsingRecord: function ($row) {
             var record = $row.data('record');
+            
+            var cssRow = "";
+            //..Andlo Estilo a las filas de acuerdo al estado del ticket
+            this.options._cssRowStyle.forEach(function (ruleCSS) {
+                var isValid = false;
+                switch (ruleCSS.operador) {
+                    case '>=':
+                        isValid = record[ruleCSS.campo] >= ruleCSS.valor ? true : false;
+                        break;
+                    case '<=':
+                        isValid = record[ruleCSS.campo] <= ruleCSS.valor ? true : false;
+                        break;
+                    case '>':
+                        isValid = record[ruleCSS.campo] > ruleCSS.valor ? true : false;
+                        break;
+                    case '<':
+                        isValid = record[ruleCSS.campo] < ruleCSS.valor ? true : false;
+                        break;
+                    default:
+                        isValid = record[ruleCSS.campo] == ruleCSS.valor ? true : false;
+                        break;
+                }
+                cssRow += isValid ? ruleCSS.clase + ' ' : '';
+            });
+            //..Andlo Fin modificación
+
             for (var i = 0; i < this._columnList.length; i++) {
-                this._createCellForRecordField(record, this._columnList[i])
+                this._createCellForRecordField(record, this._columnList[i],cssRow)
                     .appendTo($row);
             }
         },
 
         /* Create a cell for given field.
         *************************************************************************/
-        _createCellForRecordField: function (record, fieldName) {
-            return $('<td></td>')
+        _createCellForRecordField: function (record, fieldName, cssRow) {
+            var cssStyle = typeof (cssRow) != "undefined" && cssRow.trim() != "" ? ' class ="'+cssRow.trim()+'"' : '';
+            return $('<td'+cssStyle+'></td>')
                 .addClass(this.options.fields[fieldName].listClass)
                 .append((this._getDisplayTextForRecordField(record, fieldName)));
         },
@@ -723,6 +747,7 @@ THE SOFTWARE.
         /* Refreshes styles of all rows in the table
         *************************************************************************/
         _refreshRowStyles: function () {
+
             for (var i = 0; i < this._$tableRows.length; i++) {
                 if (i % 2 == 0) {
                     this._$tableRows[i].addClass('jtable-row-even');
@@ -1558,7 +1583,7 @@ THE SOFTWARE.
             if (field.type == 'date') {
                 return this._createDateInputForField(field, fieldName, value);
             } else if (field.type == 'textarea') {
-                return this._createTextAreaForField(field, fieldName, value);
+                return this._createTextAreaForField(field, fieldName, value,field.maxlength);
             } else if (field.type == 'password') {
                 return this._createPasswordInputForField(field, fieldName, value);
             } else if (field.type == 'checkbox') {
@@ -1570,7 +1595,7 @@ THE SOFTWARE.
                     return this._createDropDownListForField(field, fieldName, value, record, formType, form);
                 }
             } else {
-                return this._createTextInputForField(field, fieldName, value);
+                return this._createTextInputForField(field, fieldName, value, field.maxlength);
             }
         },
 
@@ -1600,9 +1625,11 @@ THE SOFTWARE.
         },
 
         /* Creates a textarea element for a field.
+        //..Andlo agregado parametro maxlength
         *************************************************************************/
-        _createTextAreaForField: function (field, fieldName, value) {
-            var $textArea = $('<textarea class="' + field.inputClass + '" id="Edit-' + fieldName + '" name="' + fieldName + '"></textarea>');
+        _createTextAreaForField: function (field, fieldName, value, maxLength) {
+            var maxChars = typeof (maxLength) !== "undefined" ? ' maxlength="' + maxLength+'"' : "";
+            var $textArea = $('<textarea class="' + field.inputClass + '" id="Edit-' + fieldName + '" name="' + fieldName + '"'+maxChars+'></textarea>');
             if (value != undefined) {
                 $textArea.val(value);
             }
@@ -1613,9 +1640,11 @@ THE SOFTWARE.
         },
 
         /* Creates a standart textbox for a field.
+        //..Andlo agregado parametro maxlength
         *************************************************************************/
-        _createTextInputForField: function (field, fieldName, value) {
-            var $input = $('<input class="' + field.inputClass + '" id="Edit-' + fieldName + '" type="text" name="' + fieldName + '"></input>');
+        _createTextInputForField: function (field, fieldName, value, maxLength) {
+            var maxChars = typeof (maxLength) !== "undefined" ? 'maxlength="' + maxLength + '"' : "";
+            var $input = $('<input class="' + field.inputClass + '" id="Edit-' + fieldName + '" type="text" name="' + fieldName + '"'+maxChars+'></input>');
             if (value != undefined) {
                 $input.val(value);
             }
@@ -5029,4 +5058,6 @@ THE SOFTWARE.
     });
 
 })(jQuery);
+
+
 

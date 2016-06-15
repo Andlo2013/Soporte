@@ -35,6 +35,9 @@ namespace TicketsMVC.Areas._CommonModel
 
         public string UUID { get; set; }
 
+
+        public int newMSG { get; set; }
+
         //Solo Renán
         public string Empresa { get; set; }
 

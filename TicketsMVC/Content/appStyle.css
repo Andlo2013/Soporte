@@ -1,29 +1,66 @@
 ﻿body {
 }
 
+.marginRow{
+    margin:0.1em;
+}
+
+.datosPlan{
+    display:none;
+}
+
+
 .icon{
     width:32px;
     height:32px;
 }
 
-.tituloanswer{
-    background-color:silver
+
+.subtittle{    
+    font-weight:600;
+}
+.tittle{
+    display:block;
+    font-size:x-large;
+    font-weight:800;
+    text-align:center;
+}
+
+
+.negrita{    
+    font-weight:800;
+}
+
+.solucionado{    
+    background-color:#CCFFCC;
+}
+.rechazado{    
+    background-color:#FFCC99;
+    color:#FF0033;
+}
+
+.rojo{
+    background-color:red;
+}
+.azul{
+    background-color:blue;
+}
+
+.urgente{
+    background-color:#FFEBCD;
 }
 
 
 
-#answerTable thead tr th{
-    background-color:#6699CC;
-    
+@media (min-width: 768px) { 
+
+.datosPlan{
+    display:block;
+    margin: 1em 0;
 }
 
-#answerTable_tittle{
-    background-color:#6699CC;
 }
 
-#answerTable_tittle span{
-    background-color:#5487BA;
-}
 
 
 
